@@ -185,3 +185,9 @@
 .header-icon-link{font-size:8px;letter-spacing:1px;color:inherit;text-decoration:none;white-space:nowrap}
 .top-actions{gap:clamp(8px,1.5vw,20px)}
 @media(max-width:760px){.about-dreamspace{grid-template-columns:1fr;gap:20px}.footer-main{grid-template-columns:1fr;gap:28px}.footer-credit{flex-direction:column;gap:9px}.footer-bottom{align-items:flex-start}.top-actions .header-icon-link{display:none}}
+
+/* Use the original Dream Space framed wordmark in the new identity */
+.brand{display:inline-flex;align-items:center}
+.brand img{display:block;width:clamp(112px,12vw,154px);height:auto;max-height:58px;object-fit:contain}
+.footer-expanded .brand img{width:150px;max-height:82px}
+@media(max-width:760px){.brand img{width:112px;max-height:46px}.footer-expanded .brand img{width:132px}}
