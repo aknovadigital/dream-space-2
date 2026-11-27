@@ -22,3 +22,49 @@ body{background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-s
 .panel,.login-card{border:1px solid var(--line);box-shadow:0 12px 35px #22220f08;border-radius:0;background:#fbf9f3}
 .login-wrap{background:radial-gradient(ellipse at 80% 15%,#d8ceb9,#f3f0e8 60%)}
 .login-card h1{color:#20251e}.login-card input,.fields input,.fields select,.fields textarea,.filters input,.filters select{border-radius:0;background:#fffefa;color:#24251f}
+
+/* Unified premium portal system: warm light and deep forest dark */
+:root{color-scheme:light;--ink:#24251f;--teal:#172019;--teal2:#9a8054;--muted:#77786e;--cream:#e9e3d5;--paper:#f3f0e8;--line:#ded8ca;--surface:#fbf9f3;--surface-2:#eeeae0;--gold:#b99d6c;--danger:#a34e40}
+body{background:var(--paper);color:var(--ink);transition:background .2s,color .2s}
+.portal-theme-toggle{position:fixed;z-index:100;right:22px;top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 9px var(--sans);letter-spacing:1px;cursor:pointer;box-shadow:0 5px 20px #0000000a}
+.portal-theme-toggle:first-letter{font-size:16px}
+.login-card,.panel,.stat{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.login-card h1,.topbar h1,.panel h2,.profile-heading h2,.modal-head h2{color:var(--teal)}
+th{background:var(--surface-2);color:var(--muted)}
+.fields input,.fields select,.fields textarea,.filters input,.filters select,.profile-form input,.login-card input{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.home-button,.row-actions button{background:var(--surface);color:var(--teal);border-color:var(--line)}
+.media-item,.broker-option,.access-control{background:var(--surface-2);color:var(--ink)}
+.main>.topbar{background:var(--paper);border-color:var(--line)}
+.primary,.small{background:var(--teal2);color:#fff}
+.topbar-logout{background:var(--teal);color:#fff;border-color:var(--teal)}
+body[data-theme="dark"]{color-scheme:dark;--ink:#eeeae1;--teal:#eeeae1;--teal2:#c5ae83;--muted:#aaa99e;--cream:#252a23;--paper:#111510;--line:#343a31;--surface:#191e18;--surface-2:#222820;--gold:#c5ae83;--danger:#df8d7d}
+body[data-theme="dark"] .login-wrap{background:radial-gradient(ellipse at 80% 15%,#273027,#111510 65%)}
+body[data-theme="dark"] .sidebar{background:#0b100c;border-right-color:#343a31}
+body[data-theme="dark"] .main>.topbar{background:#111510}
+body[data-theme="dark"] .login-card,body[data-theme="dark"] .panel,body[data-theme="dark"] .stat{background:#191e18;color:var(--ink);border-color:var(--line)}
+body[data-theme="dark"] .login-card h1,body[data-theme="dark"] .topbar h1,body[data-theme="dark"] .panel h2,body[data-theme="dark"] .profile-heading h2,body[data-theme="dark"] .modal-head h2{color:#eeeae1}
+body[data-theme="dark"] th{background:#222820;color:#b7b6aa}
+body[data-theme="dark"] .fields input,body[data-theme="dark"] .fields select,body[data-theme="dark"] .fields textarea,body[data-theme="dark"] .filters input,body[data-theme="dark"] .filters select,body[data-theme="dark"] .profile-form input,body[data-theme="dark"] .login-card input{background:#111510;color:#eeeae1;border-color:#41483d}
+body[data-theme="dark"] .home-button,body[data-theme="dark"] .row-actions button{background:#20271f;color:#eeeae1;border-color:#41483d}
+body[data-theme="dark"] .media-item,body[data-theme="dark"] .access-control{background:#222820;color:#eeeae1}
+body[data-theme="dark"] .login-card .muted,body[data-theme="dark"] .muted{color:#aaa99e}
+body[data-theme="dark"] dialog{background:#191e18;color:#eeeae1;border:1px solid #41483d}
+body[data-theme="dark"] .topbar-logout{background:#c5ae83;color:#151811;border-color:#c5ae83}
+body[data-theme="dark"] .primary,body[data-theme="dark"] .small{background:#c5ae83;color:#171913}
+body[data-theme="dark"] .profile-form input[readonly]{background:#252b23;color:#aaa99e}
+.stat,.panel,.login-card,button,input,select,textarea{transition:background-color .18s,border-color .18s,color .18s}
+@media(max-width:700px){
+ .portal-theme-toggle{top:10px;right:10px;padding:8px 10px;font-size:8px}
+ .login-card{padding:26px 20px}
+ .topbar{align-items:flex-start}
+ .topbar-actions{gap:6px}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .table-wrap{border-radius:0}
+ table{min-width:620px}
+ .row-actions button{min-height:36px}
+ .fields{gap:0}
+ dialog{width:calc(100vw - 18px);max-width:none;max-height:88dvh}
+ .modal-actions{position:sticky;bottom:0;background:var(--surface);padding-top:10px}
+ .sidebar{padding-bottom:env(safe-area-inset-bottom)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
