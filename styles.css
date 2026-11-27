@@ -367,3 +367,65 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
 /* Remove the hero explore CTA and scroll prompt across desktop and mobile. */
 .opening-center .enter-goa,
 .opening-bottom>span:first-child{display:none!important}
+
+
+/* Mobile menu refinement: opaque full-screen drawer, compact type and
+   independent scrolling without moving the page underneath it. */
+@media(max-width:760px){
+  body.menu-open{overflow:hidden!important;height:100%;touch-action:none}
+  .mobile-navigation{
+    position:fixed!important;
+    inset:0!important;
+    width:100vw!important;
+    height:100vh!important;
+    height:100dvh!important;
+    min-height:100dvh!important;
+    z-index:10000!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    align-items:stretch!important;
+    gap:clamp(13px,2.1vh,20px)!important;
+    padding:clamp(76px,11vh,100px) 9% 34px!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain!important;
+    -webkit-overflow-scrolling:touch;
+    background:#11130f!important;
+    opacity:1!important;
+    isolation:isolate;
+    transform:translateY(-105%)!important;
+    transition:transform .45s ease!important;
+  }
+  .mobile-navigation.open{
+    display:flex!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+  .mobile-navigation>a{
+    display:block;
+    flex:0 0 auto;
+    font:clamp(25px,6.2vw,34px)/1.12 var(--serif)!important;
+    letter-spacing:-.6px;
+    white-space:normal;
+  }
+  .mobile-navigation .mobile-nav-close{
+    position:fixed!important;
+    top:18px!important;
+    right:7%!important;
+    z-index:2;
+    font-size:32px!important;
+    line-height:1;
+  }
+  .mobile-navigation #mobileAccountLogin{
+    flex:0 0 auto;
+    align-self:flex-start;
+    margin-top:5px;
+    padding:10px 0!important;
+    border:0!important;
+    background:transparent!important;
+    color:inherit!important;
+    font:500 16px/1.3 var(--sans)!important;
+    text-align:left;
+  }
+}
