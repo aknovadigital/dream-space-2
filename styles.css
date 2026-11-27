@@ -320,3 +320,37 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
 .terms-consent input{width:15px;height:15px;min-width:15px;margin:2px 0 0;accent-color:#c5ae83}
 .terms-consent a{color:#c5ae83;text-underline-offset:3px}
 @media(max-width:600px){.footer-legal{gap:14px;flex-wrap:wrap}.footer-terms-link{font-size:8px}.footer-bottom{gap:14px;align-items:flex-start}}
+
+
+/* Mobile navigation: keep the off-canvas menu fully hidden until opened.
+   Reset the account action so iOS does not render it as a white native button. */
+@media(max-width:760px){
+  .mobile-navigation{
+    visibility:hidden;
+    pointer-events:none;
+    transition:transform .7s cubic-bezier(.77,0,.18,1),visibility 0s linear .7s;
+  }
+  .mobile-navigation.open{
+    visibility:visible;
+    pointer-events:auto;
+    transition:transform .7s cubic-bezier(.77,0,.18,1),visibility 0s;
+  }
+  .mobile-navigation #mobileAccountLogin{
+    appearance:none;
+    -webkit-appearance:none;
+    display:inline-flex;
+    align-self:flex-start;
+    width:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    color:inherit;
+    font:inherit;
+    text-align:left;
+    letter-spacing:inherit;
+    text-transform:none;
+  }
+}
