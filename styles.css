@@ -227,3 +227,48 @@ body.light .footer{background:#e8e5dc;color:#24251f}
 body.light .mobile-navigation{background:#f0eee8;color:#24251f}
 body.light .mobile-navigation a,body.light .mobile-navigation button{color:#24251f}
 @media(max-width:760px){.top-actions{gap:9px}.header-action-icon{width:31px;height:31px}.next-step-section{padding:75px 8%}.next-step-actions{grid-template-columns:1fr}.next-step-card{padding:20px}.next-step-card b{font-size:23px}}
+
+/* Contrast and persistent navigation refinement */
+.topbar{position:fixed;top:0;left:0;right:0;width:100%;background:rgba(17,19,15,.78);color:#fff!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.2);transition:background .25s,border-color .25s}
+.topbar .brand,.topbar .main-nav a,.topbar .theme-switch,.topbar .contact-link,.topbar .header-action-icon{color:#fff!important}
+.topbar .nav-toggle i{background:#fff}
+body.light .topbar{background:rgba(17,19,15,.88);color:#fff!important}
+body.light .topbar .brand,body.light .topbar .main-nav a,body.light .topbar .theme-switch,body.light .topbar .contact-link,body.light .topbar .header-action-icon{color:#fff!important}
+body.light .topbar .header-action-icon{border-color:rgba(255,255,255,.58)}
+body.light .topbar .theme-switch{color:#fff!important}
+body.light .footer-expanded{background:#e8e5dc;color:#24251f;border-top:1px solid #c9c3b5}
+body.light .footer-expanded .footer-brand-block .brand{color:#172019}
+body.light .footer-expanded .footer-brand-block p,body.light .footer-expanded .footer-address{color:#55584f}
+body.light .footer-expanded .footer-links a,body.light .footer-expanded .footer-links button{color:#383b33}
+body.light .footer-expanded .footer-links .eyebrow{color:#8b7048}
+body.light .footer-expanded .footer-actions a,body.light .footer-expanded .footer-credit a,body.light .footer-expanded .footer-credit span,body.light .footer-expanded .footer-bottom small,body.light .footer-expanded .footer-bottom>a{color:#5b5c53}
+body.light .footer-expanded .footer-credit strong{color:#292c24}
+body.light .footer-expanded .footer-brand-block .brand img{filter:none}
+body.light .next-step-section{background:#e8e5dc;color:#24251f}
+body.light .next-step-section>p{color:#56584f}
+body.light .next-step-card{border-color:#c8c2b5;color:#24251f}
+body.light .next-step-card b{color:#172019}
+body.light .next-step-card small{color:#65665e}
+body.light .next-step-card i{color:#8a7049}
+body.light .next-step-icon{color:#92764a}
+body.light .goa-world{color:#24251f}
+body.light .goa-world-heading>p{color:#55584f}
+body.light .goa-world-foot{color:#55584f}
+body.light .about-dreamspace{color:#24251f}
+body.light .about-dreamspace-copy p{color:#55584f}
+body.light .about-dreamspace-copy a{color:#8b7048}
+body.light .sample-properties{color:#24251f}
+body.light .sample-properties-head>p{color:#55584f}
+body.light .property-empty{color:#55584f}
+body.light .map-heading>p{color:#5a5c54}
+body.light .location-chip{color:#383b33;border-color:#77796e}
+body.light .location-chip.active,body.light .location-chip:hover{color:#fff}
+@media(max-width:760px){
+ .topbar{height:70px;background:rgba(17,19,15,.9)}
+ .footer-expanded{grid-template-columns:1fr}
+ .footer-main{grid-template-columns:1fr;gap:35px}
+ .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+ .footer-links .eyebrow{grid-column:1/-1}
+ .footer-credit{flex-wrap:wrap;gap:12px}
+ .footer-address{max-width:100%;line-height:1.8}
+}
