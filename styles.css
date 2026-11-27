@@ -470,3 +470,17 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
     margin-top:4px!important;
   }
 }
+
+
+/* Clean mobile header: logo, theme, login, call and WhatsApp only. */
+@media(max-width:760px){
+  .topbar{padding:0 5%;height:68px}
+  .topbar .main-nav,.topbar .contact-link,.topbar .nav-toggle{display:none!important}
+  .topbar .top-actions{display:flex;align-items:center;gap:clamp(8px,2.2vw,14px);margin-left:auto}
+  .topbar .brand img{width:clamp(92px,25vw,118px);height:auto;display:block}
+  .topbar .theme-switch{gap:4px;padding:4px 0;white-space:nowrap}
+  .topbar .theme-switch span{font-size:19px}
+  .topbar .theme-switch small{font-size:7px;letter-spacing:.8px}
+  .topbar .header-action-icon{width:32px;height:32px;min-width:32px;display:grid;place-items:center}
+  .topbar .header-action-icon svg{width:15px;height:15px}
+}
