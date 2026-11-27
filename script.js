@@ -27,11 +27,25 @@
     syncThemeControl();
   });
 
-  // Mobile navigation
+  // Mobile navigation: move drawer to body root so map/section stacking
+  // contexts cannot paint over it, and lock background scrolling while open.
   const nav = $(".mobile-navigation");
-  $(".nav-toggle")?.addEventListener("click", () => nav?.classList.add("open"));
-  $(".mobile-nav-close")?.addEventListener("click", () => nav?.classList.remove("open"));
-  $$(".mobile-navigation a").forEach(a => a.addEventListener("click", () => nav?.classList.remove("open")));
+  if (nav && nav.parentElement !== document.body) document.body.appendChild(nav);
+  const closeNav = () => {
+    nav?.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  };
+  const openNav = () => {
+    nav?.classList.add("open");
+    document.body.classList.add("menu-open");
+  };
+  $(".nav-toggle")?.addEventListener("click", openNav);
+  $(".mobile-nav-close")?.addEventListener("click", closeNav);
+  $(".mobile-navigation a").forEach(a => a.addEventListener("click", closeNav));
+  $("#mobileAccountLogin")?.addEventListener("click", () => {
+    closeNav();
+    $("#adminDialog")?.showModal();
+  });
 
   // Hero slideshow
   const heroSlides = $$(".hero-property-slide");
