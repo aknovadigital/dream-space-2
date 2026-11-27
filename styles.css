@@ -191,3 +191,39 @@
 .brand img{display:block;width:clamp(112px,12vw,154px);height:auto;max-height:58px;object-fit:contain}
 .footer-expanded .brand img{width:150px;max-height:82px}
 @media(max-width:760px){.brand img{width:112px;max-height:46px}.footer-expanded .brand img{width:132px}}
+
+/* Premium header actions and compact homepage conversion */
+.header-action-icon{width:34px;height:34px;border:1px solid rgba(255,255,255,.58);border-radius:50%;display:grid;place-items:center;background:rgba(12,15,12,.18);color:inherit;cursor:pointer;padding:8px;transition:.25s}
+.header-action-icon svg,.next-step-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.header-action-icon:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.next-step-section{padding:clamp(75px,9vw,125px) 12.5%;background:var(--panel);color:var(--ink)}
+.next-step-section h2{font:clamp(52px,7vw,94px)/.98 var(--serif);font-weight:400;letter-spacing:-3px;margin:28px 0}
+.next-step-section h2 em{color:var(--gold)}
+.next-step-section>p{font-size:12px;color:var(--muted);line-height:1.8}
+.next-step-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:42px}
+.next-step-card{display:flex;align-items:center;gap:22px;padding:26px;border:1px solid var(--line);transition:background .25s,border-color .25s}
+.next-step-card:hover{background:var(--bg);border-color:var(--gold)}
+.next-step-icon{width:46px;height:46px;flex:none;color:var(--gold)}
+.next-step-card span:last-child{display:grid;gap:9px}
+.next-step-card small{font-size:8px;letter-spacing:1.5px;color:var(--muted)}
+.next-step-card b{font:26px var(--serif);font-weight:400}
+.next-step-card i{font-style:normal;font-size:10px;color:var(--gold)}
+body.light .topbar{color:#fff}
+body.light .map-section{background:#e8e5dc;color:#20221c}
+body.light .map-heading>p,body.light .map-heading .eyebrow{color:#66685f}
+body.light .map-shell{background:#d9ddd4}
+body.light .map-location-card{background:rgba(246,244,236,.94);color:#20221c}
+body.light .map-location-card p{color:#67695f}
+body.light .location-chip{color:#33372f;border-color:#77796e}
+body.light .location-chip.active,body.light .location-chip:hover{background:#9a8054;color:#fff}
+body.light .sample-properties{background:#f0eee8;color:#24251f}
+body.light .property-filters input,body.light .property-filters select{background:#fff;color:#24251f}
+body.light .goa-world{background:#f0eee8;color:#24251f}
+body.light .about-dreamspace{background:#e6e3d9;color:#24251f}
+body.light .next-step-section{background:#e8e5dc;color:#24251f}
+body.light .broker-register{background:#e4e1d7;color:#24251f}
+body.light .broker-register>div>p{color:#66685f}
+body.light .footer{background:#e8e5dc;color:#24251f}
+body.light .mobile-navigation{background:#f0eee8;color:#24251f}
+body.light .mobile-navigation a,body.light .mobile-navigation button{color:#24251f}
+@media(max-width:760px){.top-actions{gap:9px}.header-action-icon{width:31px;height:31px}.next-step-section{padding:75px 8%}.next-step-actions{grid-template-columns:1fr}.next-step-card{padding:20px}.next-step-card b{font-size:23px}}
