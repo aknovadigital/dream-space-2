@@ -305,3 +305,8 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
 .map-shell:after{z-index:2;pointer-events:none}
 .map-top-label,.map-side-controls,.map-location-card,.map-bottom-note{z-index:650}
 @media(max-width:760px){#goa-map-canvas{min-height:430px}.map-shell{height:520px}.map-location-card{width:min(250px,calc(100% - 32px));left:16px;bottom:16px;padding:17px}.map-side-controls{right:12px;top:12px}}
+
+/* Original Dream Space wordmark on the opening loader */
+.intro-loader .loader-logo{display:block;width:clamp(118px,14vw,160px);height:auto;max-height:130px;object-fit:contain}
+.intro-loader .loader-track{margin-top:8px}
+@media(max-width:600px){.intro-loader .loader-logo{width:132px}}
