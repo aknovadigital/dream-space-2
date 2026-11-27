@@ -73,3 +73,35 @@
 .goa-life-card figcaption small{font-size:9px;color:rgba(255,255,255,.8)}
 .goa-life-note{margin-top:25px;text-align:right;font-size:7px;letter-spacing:2px;color:#cbb58e}
 @media(max-width:760px){.goa-life{padding:75px 6%}.goa-life-heading{display:block;margin-bottom:28px}.goa-life-heading h2{font-size:54px}.goa-life-heading>p{margin-top:18px}.goa-life-grid{grid-template-columns:1fr 1fr;grid-template-rows:310px 220px 220px;gap:9px}.goa-life-card:first-child{grid-column:span 2;grid-row:auto}.goa-life-card:nth-child(2){grid-column:auto}.goa-life-card figcaption{left:12px;bottom:13px;gap:5px}.goa-life-card figcaption strong{font-size:20px}.goa-life-card figcaption small{font-size:8px}.goa-life-note{text-align:left;line-height:1.8}}
+
+
+/* Sample property cards — sale, rent and lease */
+.sample-properties{padding:clamp(76px,9vw,132px) 8%;background:#f0eadc;color:#292a23}
+.sample-properties-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:44px}
+.sample-properties-head h2{font:clamp(48px,6.5vw,84px)/.98 var(--serif);font-weight:400;letter-spacing:-.045em;margin:20px 0 0}
+.sample-properties-head h2 em{color:#9a533e}
+.sample-properties-head>p{font-size:11px;line-height:1.9;color:#6e6b5e;margin-bottom:7px}
+.sample-properties-head>p span{font-size:9px;color:#9a533e;letter-spacing:1px}
+.sample-property-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.sample-property-card{background:#faf8f1;min-width:0;display:flex;flex-direction:column;box-shadow:0 12px 35px rgba(49,39,24,.07);transition:transform .35s,box-shadow .35s}
+.sample-property-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(49,39,24,.13)}
+.sample-property-image{height:260px;position:relative;overflow:hidden;background:#c8c0ad}
+.sample-property-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.sample-property-card:hover .sample-property-image img{transform:scale(1.05)}
+.sample-property-type{position:absolute;top:16px;left:16px;background:#f0eadc;color:#292a23;padding:9px 12px;font-size:8px;letter-spacing:1.5px}
+.sample-property-number{position:absolute;right:15px;top:18px;color:white;font-size:8px;letter-spacing:1.4px;text-shadow:0 1px 5px #000}
+.sample-property-info{padding:23px 22px 24px;display:flex;flex-direction:column;flex:1}
+.sample-property-location{font-size:8px;letter-spacing:1.6px;color:#9a533e}
+.sample-property-info h3{font:30px/1.1 var(--serif);font-weight:400;margin:12px 0;color:#292a23}
+.sample-property-info p{font-size:10px;line-height:1.85;color:#706f65;min-height:57px;margin:0 0 18px}
+.sample-property-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.sample-property-meta span{border:1px solid #d9d1c1;padding:7px 8px;font-size:7px;letter-spacing:.8px;color:#5d5d53}
+.sample-property-price{border-top:1px solid #ded7c9;padding-top:16px;margin-top:auto;display:flex;flex-direction:column;gap:5px}
+.sample-property-price strong{font:27px/1.1 var(--serif);font-weight:400;color:#292a23}
+.sample-property-price strong small{font:10px var(--sans);color:#77766c}
+.sample-property-price>span{font-size:7px;letter-spacing:1.3px;color:#9a533e}
+.sample-property-link{display:flex;justify-content:space-between;align-items:center;margin-top:19px;padding-top:14px;border-top:1px solid #ded7c9;font-size:7px;letter-spacing:1.2px;color:#36372f}
+.sample-property-link b{font-size:15px;color:#9a533e;font-weight:400}
+.sample-properties-note{margin-top:24px;text-align:right;font-size:7px;line-height:1.7;letter-spacing:1.2px;color:#8b8576}
+@media(max-width:900px){.sample-property-grid{grid-template-columns:1fr 1fr}.sample-property-card:last-child{grid-column:span 2}.sample-property-card:last-child .sample-property-image{height:300px}}
+@media(max-width:600px){.sample-properties{padding:75px 6%}.sample-properties-head{display:block;margin-bottom:28px}.sample-properties-head h2{font-size:55px}.sample-properties-head>p{margin-top:20px}.sample-property-grid{grid-template-columns:1fr;gap:15px}.sample-property-card:last-child{grid-column:auto}.sample-property-image{height:245px}.sample-property-card:last-child .sample-property-image{height:245px}.sample-property-info{padding:21px}.sample-property-info p{min-height:0}.sample-properties-note{text-align:left}}
