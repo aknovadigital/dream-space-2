@@ -124,3 +124,40 @@
 .broker-register>a b{font-size:15px;font-weight:400}
 .footer{min-height:90px;padding-top:20px;padding-bottom:20px}
 @media(max-width:760px){.opening{min-height:680px}.broker-register{padding:28px 8%;align-items:flex-start;flex-direction:column;gap:18px}.broker-register>a{padding:12px 15px}.footer{min-height:90px}}
+
+
+/* Dream Space — live public inventory and broker application */
+.property-filters{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;margin:0 0 28px}
+.property-filters input,.property-filters select,.public-enquiry-form input,.public-enquiry-form select,.public-enquiry-form textarea,.broker-register input{min-width:0;padding:13px 14px;border:1px solid #d8d0bf;background:#faf8f1;color:#292a23;font:11px var(--sans)}
+#propertyGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#propertyGrid .property-card{background:#faf8f1;display:flex;flex-direction:column;color:#292a23;box-shadow:0 12px 35px rgba(49,39,24,.07);min-width:0}
+#propertyGrid .property-card img{width:100%;height:260px;object-fit:cover}
+#propertyGrid .property-info{padding:22px;display:flex;flex-direction:column;gap:9px}
+#propertyGrid .property-info small{font-size:8px;letter-spacing:1.4px;color:#9a533e;text-transform:uppercase}
+#propertyGrid .property-info h3{font:28px/1.1 var(--serif);font-weight:400;margin:2px 0}
+#propertyGrid .property-info p{font-size:10px;line-height:1.7;color:#706f65}
+.property-empty{padding:25px;color:#706f65;grid-column:1/-1}
+.public-enquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(460px,100%)}
+.public-enquiry-form textarea,.public-enquiry-form button,.public-enquiry-form p{grid-column:1/-1}
+.public-enquiry-form textarea{min-height:90px;resize:vertical}
+.public-enquiry-form button{padding:14px;background:#cdb58c;border:0;color:#25271f;font-size:8px;letter-spacing:1.5px}
+.contact-bottom{align-items:flex-start;gap:24px}
+.broker-register{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:36px 8%;background:#20271f;color:#f2eee4;border-top:1px solid #ffffff18}
+.broker-register h2{font:clamp(28px,3.5vw,42px)/1.1 var(--serif);font-weight:400;margin:12px 0}
+.broker-register h2 em{color:#d0b58a}
+.broker-register>div>p{font-size:10px;line-height:1.8;color:#c5c0b2;max-width:320px}
+.broker-register form{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-content:center}
+.broker-register form button{grid-column:1/-1;justify-self:start;padding:13px 17px;background:#cdb58c;border:0;color:#25271f;font-size:8px;letter-spacing:1.3px}
+.broker-register form p{grid-column:1/-1;font-size:10px;color:#e4d0aa;min-height:14px}
+.login-dialog{width:min(420px,calc(100% - 30px));border:1px solid #d0b58a;background:#f1eee6;color:#25271f;padding:34px;box-shadow:0 25px 90px #0007}
+.login-dialog::backdrop{background:#080c0acc}
+.login-dialog h2{font:36px var(--serif);font-weight:400;margin:12px 0 25px}
+.login-dialog .dialog-close{position:absolute;right:12px;top:12px}
+.login-dialog .dialog-close button{border:0;background:none;font-size:25px}
+.login-choices{display:flex;gap:10px}
+.login-choices button,.login-dialog #loginForm button{padding:13px 16px;background:#252c23;color:#f2eee4;border:0;font-size:9px;letter-spacing:1px}
+.login-dialog #loginForm{display:grid;gap:10px}
+.login-dialog #loginForm input{padding:13px;border:1px solid #d5cdbd;background:#fff}
+.login-dialog #loginMessage{font-size:11px;line-height:1.6}
+.top-actions #adminOpen{background:none;border:0;color:inherit;font-size:8px;letter-spacing:1.2px;cursor:pointer}
+@media(max-width:760px){.property-filters{grid-template-columns:1fr 1fr}#propertyGrid{grid-template-columns:1fr}.broker-register{grid-template-columns:1fr;gap:18px}.broker-register form{grid-template-columns:1fr}.broker-register form button,.broker-register form p{grid-column:auto}.public-enquiry-form{grid-template-columns:1fr}.public-enquiry-form>*{grid-column:1}.contact-bottom{flex-direction:column}.login-choices{flex-direction:column}}
