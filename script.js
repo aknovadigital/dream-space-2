@@ -1,31 +1,127 @@
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-window.addEventListener("load",()=>setTimeout(()=>$(".intro-loader").classList.add("loaded"),550));
-const themeKey="dream-space-home-theme";let initialTheme="dark";try{initialTheme=localStorage.getItem(themeKey)||"dark"}catch(e){}document.body.classList.toggle("light",initialTheme==="light");function syncThemeControl(){const light=document.body.classList.contains("light");$(".theme-switch small").textContent=light?"DARK":"LIGHT";$(".theme-switch span").textContent=light?"☾":"☼";}syncThemeControl();$(".theme-switch").addEventListener("click",()=>{document.body.classList.toggle("light");const light=document.body.classList.contains("light");try{localStorage.setItem(themeKey,light?"light":"dark")}catch(e){}syncThemeControl();});
-const nav=$(".mobile-navigation");$(".nav-toggle").addEventListener("click",()=>nav.classList.add("open"));$(".mobile-nav-close").addEventListener("click",()=>nav.classList.remove("open"));$$(".mobile-navigation a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
-const heroSlides=$(".hero-property-slide");let heroSlideIndex=0;if(heroSlides.length>1){setInterval(()=>{heroSlides[heroSlideIndex].classList.remove("active");heroSlideIndex=(heroSlideIndex+1)%heroSlides.length;heroSlides[heroSlideIndex].classList.add("active");},5200);}
-const film=$(".property-video"),filmButton=$(".film-play");filmButton.addEventListener("click",()=>{if(film.paused){film.play().catch(()=>{});filmButton.textContent="Ⅱ";}else{film.pause();filmButton.textContent="▶";}});
-if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);gsap.from(".opening-center>*",{y:34,opacity:0,duration:1.1,stagger:.14,ease:"power3.out",delay:.55});gsap.to(".hero-property-slide.active",{scale:1,duration:2.2,ease:"power2.out"});gsap.to(".orb-one",{rotation:25,scale:1.12,duration:12,repeat:-1,yoyo:true,ease:"sine.inOut"});gsap.to(".orb-two",{rotation:-18,scale:.94,duration:15,repeat:-1,yoyo:true,ease:"sine.inOut"});gsap.utils.toArray(".map-heading,.sample-properties-head,.goa-world-heading,.contact-section h2").forEach(el=>gsap.from(el,{y:45,opacity:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 85%",once:true}}));gsap.to(".story-backdrop",{yPercent:12,ease:"none",scrollTrigger:{trigger:".story-section",start:"top bottom",end:"bottom top",scrub:true}});}
-let goaMap=null,goaMarkers={};
-const places=[{id:"assagao",name:"Assagao",coordinates:[15.6027,73.8075],detail:"Lush lanes, heritage homes and a slower rhythm."},{id:"anjuna",name:"Anjuna",coordinates:[15.5735,73.7405],detail:"A lively mix of beaches, cafés and village life."},{id:"vagator",name:"Vagator",coordinates:[15.596,73.735],detail:"Dramatic coastline, sunsets and relaxed hideaways."},{id:"siolim",name:"Siolim",coordinates:[15.617,73.786],detail:"A peaceful village setting close to North Goa's coast."}];
-function selectArea(id){const p=places.find(x=>x.id===id);$("#map-area-label").textContent=p?"NORTH GOA / "+p.name.toUpperCase():"SELECTED LOCATION";$("#map-area-title").innerHTML=p?p.name+"<br><em>North Goa.</em>":"Explore<br><em>North Goa.</em>";$("#map-area-copy").textContent=p?p.detail:"Choose a location marker to explore its property neighbourhood.";$$(".location-chip").forEach(b=>b.classList.toggle("active",b.dataset.location===id));if(goaMap&&p)goaMap.flyTo(p.coordinates,14,{duration:1.2});}
-function initGoaMap(){const el=$("#goa-map-canvas");if(!el||!window.L){console.error("Leaflet map library did not load");return;}
- goaMap=L.map(el,{scrollWheelZoom:false,zoomControl:false,attributionControl:true,dragging:true}).setView([15.59,73.78],11);
- L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',crossOrigin:true}).addTo(goaMap);
- L.control.zoom({position:"bottomright"}).addTo(goaMap);
- places.forEach(p=>{const icon=L.divIcon({className:"dream-map-pin-wrap",html:'<span class="dream-map-pin"><i></i>'+p.name+'</span>',iconSize:[110,34],iconAnchor:[55,34]});const marker=L.marker(p.coordinates,{icon}).addTo(goaMap);marker.on("click",()=>selectArea(p.id));goaMarkers[p.id]=marker;});
- setTimeout(()=>goaMap.invalidateSize(true),250);
-}
-window.addEventListener("load",()=>setTimeout(initGoaMap,700));
-window.addEventListener("resize",()=>goaMap&&goaMap.invalidateSize());
-$$(".location-chip").forEach(b=>b.classList.toggle("active",b.dataset.location===id));if(goaMap&&p)goaMap.flyTo({center:p.coordinates,zoom:13.6,pitch:0,bearing:0,duration:1200,essential:true});}
-function initGoaMap(){const el=$("#goa-map-canvas");if(!el||!window.maplibregl)return;
- const style={version:8,sources:{osm:{type:"raster",tiles:["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],tileSize:256,attribution:"© OpenStreetMap contributors"}},layers:[{id:"osm-raster",type:"raster",source:"osm",minzoom:0,maxzoom:19}]};
- goaMap=new maplibregl.Map({container:el,style,center:[73.78,15.59],zoom:10.8,pitch:0,bearing:0,antialias:true,attributionControl:true,dragRotate:false,touchPitch:false,cooperativeGestures:true});
- goaMap.addControl(new maplibregl.NavigationControl({showCompass:false,showZoom:true}),"bottom-right");
- goaMap.on("load",()=>{goaMap.resize();places.forEach(p=>{const node=document.createElement("button");node.className="map-marker";node.type="button";node.setAttribute("aria-label","Explore "+p.name);node.innerHTML="<span></span><b>"+p.name+"</b>";node.style.cssText="display:flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.9);background:#172019;color:#fff;padding:9px 11px;font:600 10px 'DM Sans',Arial;letter-spacing:.6px;cursor:pointer;white-space:nowrap;box-shadow:0 4px 18px #0004;border-radius:2px";node.querySelector("span").style.cssText="width:7px;height:7px;border-radius:50%;background:#d1b27d;box-shadow:0 0 9px #d1b27d";node.addEventListener("click",()=>selectArea(p.id));goaMarkers.push(new maplibregl.Marker({element:node,anchor:"bottom"}).setLngLat(p.coordinates).addTo(goaMap));});});
- goaMap.on("error",e=>{console.warn("Dream Space map tile error",e&&e.error||e);});
-}
-window.addEventListener("load",()=>setTimeout(initGoaMap,500));
-$$(".location-chip").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.location;if(id==="all"){selectArea("all");if(goaMap)goaMap.flyTo([15.59,73.78],11,{duration:1.2});}else selectArea(id);}));
-$("#map-tilt").addEventListener("click",()=>{if(goaMap){const next=goaMap.getZoom()<13;goaMap.flyTo([15.59,73.78],next?12:11,{duration:1});$("#map-tilt").innerHTML=next?"ZOOM OUT <span>↗</span>":"ZOOM IN <span>↗</span>";}});
-$("#map-reset").addEventListener("click",()=>{if(goaMap){goaMap.flyTo([15.59,73.78],11,{duration:1.2});selectArea("all");}});
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+
+  // Always dismiss the intro screen, even if an optional library fails.
+  const hideLoader = () => $(".intro-loader")?.classList.add("loaded");
+  window.addEventListener("load", () => setTimeout(hideLoader, 450), { once: true });
+  setTimeout(hideLoader, 3500);
+
+  // Theme preference
+  const themeKey = "dream-space-home-theme";
+  let initialTheme = "dark";
+  try { initialTheme = localStorage.getItem(themeKey) || "dark"; } catch (e) {}
+  document.body.classList.toggle("light", initialTheme === "light");
+  function syncThemeControl() {
+    const light = document.body.classList.contains("light");
+    const small = $(".theme-switch small");
+    const icon = $(".theme-switch span");
+    if (small) small.textContent = light ? "DARK" : "LIGHT";
+    if (icon) icon.textContent = light ? "☾" : "☼";
+  }
+  syncThemeControl();
+  $(".theme-switch")?.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    const light = document.body.classList.contains("light");
+    try { localStorage.setItem(themeKey, light ? "light" : "dark"); } catch (e) {}
+    syncThemeControl();
+  });
+
+  // Mobile navigation
+  const nav = $(".mobile-navigation");
+  $(".nav-toggle")?.addEventListener("click", () => nav?.classList.add("open"));
+  $(".mobile-nav-close")?.addEventListener("click", () => nav?.classList.remove("open"));
+  $$(".mobile-navigation a").forEach(a => a.addEventListener("click", () => nav?.classList.remove("open")));
+
+  // Hero slideshow
+  const heroSlides = $$(".hero-property-slide");
+  if (heroSlides.length > 1) {
+    let slideIndex = Math.max(0, heroSlides.findIndex(s => s.classList.contains("active")));
+    setInterval(() => {
+      heroSlides[slideIndex]?.classList.remove("active");
+      slideIndex = (slideIndex + 1) % heroSlides.length;
+      heroSlides[slideIndex]?.classList.add("active");
+    }, 5200);
+  }
+
+  // Optional property film controls
+  const film = $(".property-video"), filmButton = $(".film-play");
+  filmButton?.addEventListener("click", () => {
+    if (!film) return;
+    if (film.paused) { film.play().catch(() => {}); filmButton.textContent = "Ⅱ"; }
+    else { film.pause(); filmButton.textContent = "▶"; }
+  });
+
+  // Optional motion enhancements; the site remains usable without GSAP.
+  if (window.gsap && window.ScrollTrigger) {
+    try {
+      gsap.registerPlugin(ScrollTrigger);
+      if ($(".opening-center")) gsap.from(".opening-center>*", { y:34, opacity:0, duration:1.1, stagger:.14, ease:"power3.out", delay:.55 });
+      if ($(".orb-one")) gsap.to(".orb-one", { rotation:25, scale:1.12, duration:12, repeat:-1, yoyo:true, ease:"sine.inOut" });
+      if ($(".orb-two")) gsap.to(".orb-two", { rotation:-18, scale:.94, duration:15, repeat:-1, yoyo:true, ease:"sine.inOut" });
+      gsap.utils.toArray(".map-heading,.sample-properties-head,.goa-world-heading,.next-step-section h2").forEach(el => gsap.from(el, { y:35, opacity:0, duration:.9, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 88%", once:true } }));
+    } catch (e) { console.warn("Motion effects unavailable", e); }
+  }
+
+  // North Goa interactive map (Leaflet + OpenStreetMap)
+  let goaMap = null;
+  const places = [
+    { id:"assagao", name:"Assagao", coordinates:[15.6027,73.8075], detail:"Lush lanes, heritage homes and a slower rhythm." },
+    { id:"anjuna", name:"Anjuna", coordinates:[15.5735,73.7405], detail:"A lively mix of beaches, cafés and village life." },
+    { id:"vagator", name:"Vagator", coordinates:[15.596,73.735], detail:"Dramatic coastline, sunsets and relaxed hideaways." },
+    { id:"siolim", name:"Siolim", coordinates:[15.617,73.786], detail:"A peaceful village setting close to North Goa's coast." }
+  ];
+  function selectArea(id) {
+    const place = places.find(p => p.id === id);
+    const label = $("#map-area-label"), title = $("#map-area-title"), copy = $("#map-area-copy");
+    if (label) label.textContent = place ? "NORTH GOA / " + place.name.toUpperCase() : "SELECTED LOCATION";
+    if (title) title.innerHTML = place ? place.name + "<br><em>North Goa.</em>" : "Explore<br><em>North Goa.</em>";
+    if (copy) copy.textContent = place ? place.detail : "Choose a marked area to explore its property neighbourhood.";
+    $$(".location-chip").forEach(btn => btn.classList.toggle("active", btn.dataset.location === (place ? id : "all")));
+    if (goaMap && place) goaMap.flyTo(place.coordinates, 14, { duration:1.1 });
+  }
+  function initGoaMap() {
+    const el = $("#goa-map-canvas");
+    if (!el || !window.L || goaMap) return;
+    try {
+      goaMap = L.map(el, { scrollWheelZoom:false, zoomControl:false, attributionControl:true }).setView([15.59,73.78], 11);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom:19,
+        attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+      }).addTo(goaMap);
+      L.control.zoom({ position:"bottomright" }).addTo(goaMap);
+      places.forEach(place => {
+        const icon = L.divIcon({
+          className:"dream-map-pin-wrap",
+          html:'<span class="dream-map-pin"><i></i>' + place.name + '</span>',
+          iconSize:[110,34], iconAnchor:[55,34]
+        });
+        L.marker(place.coordinates, { icon }).addTo(goaMap).on("click", () => selectArea(place.id));
+      });
+      setTimeout(() => goaMap && goaMap.invalidateSize(true), 300);
+    } catch (e) {
+      console.error("Dream Space map could not initialise", e);
+      goaMap = null;
+    }
+  }
+  window.addEventListener("load", () => setTimeout(initGoaMap, 250), { once:true });
+  window.addEventListener("resize", () => goaMap?.invalidateSize());
+
+  $$(".location-chip").forEach(btn => btn.addEventListener("click", () => {
+    const id = btn.dataset.location;
+    if (id === "all") {
+      selectArea("all");
+      goaMap?.flyTo([15.59,73.78], 11, { duration:1.1 });
+    } else selectArea(id);
+  }));
+  $("#map-tilt")?.addEventListener("click", () => {
+    if (!goaMap) return;
+    const zoomIn = goaMap.getZoom() < 13;
+    goaMap.flyTo([15.59,73.78], zoomIn ? 12 : 11, { duration:1 });
+    $("#map-tilt").innerHTML = zoomIn ? "ZOOM OUT <span>↗</span>" : "ZOOM IN <span>↗</span>";
+  });
+  $("#map-reset")?.addEventListener("click", () => {
+    goaMap?.flyTo([15.59,73.78], 11, { duration:1.1 });
+    selectArea("all");
+  });
+})();
