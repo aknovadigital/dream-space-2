@@ -68,3 +68,16 @@ body[data-theme="dark"] .profile-form input[readonly]{background:#252b23;color:#
  .sidebar{padding-bottom:env(safe-area-inset-bottom)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Mobile navigation: touch-friendly horizontally scrollable workspace rail */
+@media(max-width:700px){
+ .sidebar{height:76px;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;gap:5px;padding:6px 8px calc(6px + env(safe-area-inset-bottom));}
+ .sidebar::-webkit-scrollbar{display:none}
+ .sidebar .nav{flex:0 0 72px;min-width:72px;height:62px;border-radius:2px;white-space:normal}
+ .sidebar .nav span:last-child{font-size:8px;text-align:center;line-height:1.1}
+ .app{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+ .main{padding-bottom:30px}
+ .topbar{padding-top:32px}
+ .portal-theme-toggle{position:absolute;top:12px;right:12px}
+ .topbar-actions button{min-height:38px}
+}
