@@ -362,3 +362,8 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
   .mobile-navigation{display:none!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-100%)!important}
   .mobile-navigation.open{display:flex!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}
 }
+
+
+/* Remove the hero explore CTA and scroll prompt across desktop and mobile. */
+.opening-center .enter-goa,
+.opening-bottom>span:first-child{display:none!important}
