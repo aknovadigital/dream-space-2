@@ -161,3 +161,27 @@
 .login-dialog #loginMessage{font-size:11px;line-height:1.6}
 .top-actions #adminOpen{background:none;border:0;color:inherit;font-size:8px;letter-spacing:1.2px;cursor:pointer}
 @media(max-width:760px){.property-filters{grid-template-columns:1fr 1fr}#propertyGrid{grid-template-columns:1fr}.broker-register{grid-template-columns:1fr;gap:18px}.broker-register form{grid-template-columns:1fr}.broker-register form button,.broker-register form p{grid-column:auto}.public-enquiry-form{grid-template-columns:1fr}.public-enquiry-form>*{grid-column:1}.contact-bottom{flex-direction:column}.login-choices{flex-direction:column}}
+
+
+/* About, contact and developer details */
+.about-dreamspace{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center;padding:clamp(65px,8vw,110px) 8%;background:#20271f;color:#f2eee4}
+.about-dreamspace h2{font:clamp(42px,6vw,76px)/.98 var(--serif);font-weight:400;margin:22px 0 0;letter-spacing:-2px}
+.about-dreamspace h2 em{color:#d0b58a}
+.about-dreamspace-copy p{font-size:12px;line-height:2;color:#d1cec3;max-width:520px}
+.about-dreamspace-copy>a{display:inline-block;margin-top:20px;color:#d0b58a;font-size:8px;letter-spacing:1.5px}
+.footer-expanded{display:block;padding:38px 7% 20px;background:#171d17;color:#eeeae1;border-top:1px solid #ffffff18}
+.footer-main{display:grid;grid-template-columns:1.4fr .6fr;gap:50px;padding-bottom:28px}
+.footer-brand-block>p,.footer-address{font-size:10px;line-height:1.8;color:#b9b9aa}
+.footer-actions{display:flex;flex-wrap:wrap;gap:12px 22px;margin:18px 0}
+.footer-actions a,.footer-links a,.footer-links button{font-size:8px;letter-spacing:1.2px;color:#d5c5a6;text-decoration:none}
+.footer-address{max-width:440px}
+.footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.footer-links button{border:0;background:none;padding:0;cursor:pointer}
+.footer-credit{display:flex;flex-wrap:wrap;gap:12px 25px;padding:18px 0;border-top:1px solid #ffffff18;border-bottom:1px solid #ffffff18;font-size:9px;color:#b9b9aa}
+.footer-credit strong{color:#eeeae1}
+.footer-credit a{color:#d5c5a6;text-decoration:none}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:17px}
+.footer-bottom small,.footer-bottom a{font-size:8px;letter-spacing:1px;color:#a9aa9d;text-decoration:none}
+.header-icon-link{font-size:8px;letter-spacing:1px;color:inherit;text-decoration:none;white-space:nowrap}
+.top-actions{gap:clamp(8px,1.5vw,20px)}
+@media(max-width:760px){.about-dreamspace{grid-template-columns:1fr;gap:20px}.footer-main{grid-template-columns:1fr;gap:28px}.footer-credit{flex-direction:column;gap:9px}.footer-bottom{align-items:flex-start}.top-actions .header-icon-link{display:none}}
