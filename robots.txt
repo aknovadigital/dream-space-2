@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aknovadigital.github.io/dream-space-2/sitemap.xml
+Sitemap: https://dreamspaceestate.in/sitemap.xml
