@@ -426,6 +426,59 @@ body.light #propertyDetail .property-overview-section .property-description,body
  .gallery-all-photos{right:14px;bottom:14px;padding:10px 12px;font-size:8px}
 }
 
+
+/* Full-bleed property photography and legible floating controls */
+#propertyDetail .property-hero-gallery{width:100vw!important;max-width:none!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;overflow:hidden!important}
+#propertyDetail .property-hero-gallery .property-gallery{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+#propertyDetail .property-hero-gallery .property-gallery-main{width:100%!important;height:100svh!important;min-height:640px!important;max-height:none!important;margin:0!important;border-radius:0!important;overflow:hidden!important;position:relative!important;background:#111!important;box-shadow:none!important}
+#propertyDetail .property-hero-gallery .property-gallery-main img,
+#propertyDetail .property-hero-gallery .property-gallery-main video{width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;filter:none!important;opacity:1!important;image-rendering:auto!important;transform:translateZ(0)}
+#propertyDetail .property-hero-gallery .property-gallery-main:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#080d0b72 0%,transparent 22%,transparent 72%,#080d0b40 100%);z-index:1}
+#propertyDetail .property-hero-gallery .gallery-arrow{z-index:3;width:52px!important;height:52px!important;background:#111b17b8!important;border:1px solid #fff9!important;color:#fff!important;font-size:29px!important;backdrop-filter:blur(12px);box-shadow:0 5px 20px #0005!important}
+#propertyDetail .property-hero-gallery .gallery-arrow:hover{background:#c5ae83!important;color:#142019!important}
+.gallery-all-photos{z-index:4!important;font-size:11px!important;padding:15px 19px!important;letter-spacing:1.5px!important;background:#111b17d9!important;border:1px solid #f4ead1!important;color:#fff!important}
+.property-site-header{z-index:10!important;min-height:92px!important;padding:16px clamp(20px,5vw,76px)!important;background:linear-gradient(180deg,#0b100de0 0%,#0b100d8a 72%,transparent 100%)!important;backdrop-filter:none!important}
+.property-brand{display:inline-flex;align-items:center;padding:7px 10px;background:#101711a8;border:1px solid #e7d8b54d;border-radius:3px;backdrop-filter:blur(12px)}
+.property-brand img{width:128px!important;height:auto!important;filter:brightness(0) invert(1)!important}
+.property-header-nav{display:flex!important;align-items:center!important;gap:12px!important}
+.property-header-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;padding:0 17px!important;border:1px solid #fff8!important;border-radius:3px!important;background:#101711bd!important;color:#fff!important;text-shadow:none!important;font:600 12px var(--sans)!important;letter-spacing:.15px!important;backdrop-filter:blur(12px)}
+.property-header-nav a:hover{background:#c5ae83!important;color:#172018!important;border-color:#c5ae83!important}
+.property-theme-toggle{min-height:42px!important;padding:0 15px!important;background:#101711bd!important;border:1px solid #fff8!important;color:#fff!important;border-radius:3px!important;backdrop-filter:blur(12px)}
+.property-theme-toggle small{font-size:10px!important;letter-spacing:1.1px!important}
+.property-header-contact{gap:10px!important}
+.property-call{padding:8px 12px!important;background:#101711bd!important;border:1px solid #fff6!important;border-radius:3px!important;color:#fff!important;backdrop-filter:blur(12px)}
+.property-call span{font-size:11px!important}
+.property-call b{font-size:13px!important;color:#fff!important}
+.property-whatsapp{min-height:42px!important;padding:0 16px!important;font-size:12px!important;border:1px solid #ffffff75!important;box-shadow:0 4px 16px #0003}
+body.light .property-site-header{background:linear-gradient(180deg,#0b100de0 0%,#0b100d8a 72%,transparent 100%)!important}
+body.light .property-header-nav a,body.light .property-call,body.light .property-call b,body.light .property-theme-toggle{color:#fff!important}
+@media(max-width:800px){
+ .property-site-header{min-height:80px!important;padding:10px 12px!important;display:flex!important;flex-wrap:nowrap!important;gap:7px!important;align-items:center!important}
+ .property-brand{padding:5px 7px!important}
+ .property-brand img{width:86px!important}
+ .property-header-nav{order:0!important;flex:1 1 auto!important;gap:5px!important;justify-content:center!important;padding:0!important}
+ .property-header-nav a{min-height:36px!important;padding:0 8px!important;font-size:10px!important;white-space:nowrap!important}
+ .property-theme-toggle{min-height:36px!important;padding:0 8px!important;gap:4px!important}
+ .property-theme-toggle small{font-size:8px!important}
+ .property-header-contact{margin-left:0!important;gap:5px!important}
+ .property-call{display:none!important}
+ .property-whatsapp{min-height:36px!important;padding:0 9px!important;font-size:9px!important;white-space:nowrap}
+ #propertyDetail .property-hero-gallery .property-gallery-main{height:100svh!important;min-height:540px!important}
+ .gallery-all-photos{right:14px!important;bottom:18px!important;padding:12px 13px!important;font-size:9px!important}
+}
+@media(max-width:520px){
+ .property-site-header{gap:5px!important;padding:9px 8px!important}
+ .property-brand img{width:70px!important}
+ .property-header-nav{gap:4px!important}
+ .property-header-nav a{font-size:9px!important;padding:0 6px!important;min-height:34px!important}
+ .property-header-nav .property-all{display:inline-flex!important}
+ .property-theme-toggle{min-height:34px!important;padding:0 6px!important}
+ .property-theme-toggle span{font-size:14px!important}
+ .property-theme-toggle small{font-size:7px!important}
+ .property-whatsapp{min-height:34px!important;padding:0 7px!important;font-size:8px!important}
+ #propertyDetail .property-hero-gallery .property-gallery-main{height:100svh!important;min-height:520px!important}
+}
+
 </style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><button type="button" class="property-theme-toggle" id="propertyThemeToggle" aria-label="Switch colour theme"><span id="propertyThemeIcon">☼</span><small id="propertyThemeLabel">LIGHT</small></button><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script>
 <script>
 (()=>{const key="dream-space-home-theme",body=document.body,btn=document.getElementById("propertyThemeToggle"),icon=document.getElementById("propertyThemeIcon"),label=document.getElementById("propertyThemeLabel"),logo=document.querySelector(".ds-footer-brand .footer-brand img");let theme="dark";try{theme=localStorage.getItem(key)||"dark"}catch(e){}function apply(){const light=body.classList.contains("light");if(icon)icon.textContent=light?"☾":"☼";if(label)label.textContent=light?"DARK":"LIGHT";if(btn)btn.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");if(logo)logo.src=light?"assets/dream-space-logo.svg":"assets/dream-space-logo-beige.svg";}body.classList.toggle("light",theme==="light");apply();btn?.addEventListener("click",()=>{body.classList.toggle("light");const light=body.classList.contains("light");try{localStorage.setItem(key,light?"light":"dark")}catch(e){}apply()});})();
