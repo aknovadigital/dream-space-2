@@ -127,4 +127,56 @@
 .property-detail-share:hover{background:#173f3a;color:#fff}
 .property-intro-price{display:flex;flex-direction:column;align-items:flex-end}
 @media(max-width:600px){.property-intro-price{align-items:flex-start}.property-detail-share{margin-top:8px}}
-</style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div><div class="ds-footer-credit"><p>Website designed &amp; developed by <strong>AKNOVA Digital</strong></p><a href="tel:+919374020304">+91 93740 20304</a></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script></body></html>
+
+/* Property-page header controls and theme support */
+.property-header-nav,.property-header-nav a,.property-site-header .property-back,.property-site-header .property-all{color:#263b32!important;opacity:1!important}
+.property-header-nav a{font-weight:500}
+.property-theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid #d9d2c2;border-radius:30px;background:transparent;color:#263b32;cursor:pointer;white-space:nowrap}
+.property-theme-toggle span{font-size:17px;line-height:1}
+.property-theme-toggle small{font:600 9px var(--sans);letter-spacing:1px}
+.property-intro-price .property-detail-share{background:#c5ae83;color:#17251e;border:1px solid #c5ae83;border-radius:2px;padding:10px 16px;font:600 10px var(--sans);letter-spacing:1px;text-transform:uppercase;transition:background .2s,color .2s}
+.property-intro-price .property-detail-share:hover{background:transparent;color:#e9dfc1}
+.ds-footer-brand .footer-brand img{width:132px!important;max-height:76px!important;filter:none!important;opacity:1!important}
+body.light .property-page{color:#20251f}
+body.light .property-intro h1,body.light .property-intro-price strong{color:#173f3a}
+body.light .property-intro-location,body.light .property-intro-price small{color:#62685f}
+body.light .property-info-panel{background:#fffefa!important;color:#20251f!important;border-color:#e4ddcd!important}
+body.light .property-info-panel h2,body.light .property-info-panel h3{color:#173f3a!important}
+body.light .property-description,body.light .property-features{color:#555d55!important}
+body.light .property-spec{background:#f7f4eb!important;border-color:#e5dece!important}
+body.light .property-spec small{color:#686c62!important}
+body.light .property-spec strong{color:#173f3a!important}
+body.light .property-divider{background:#e5dece!important}
+body.light .property-enquiry-section{background:#f2eddc!important;color:#20251f!important;border-color:#ddd2b8!important}
+body.light .property-enquiry-copy h2{color:#173f3a!important}
+body.light .property-enquiry-copy p{color:#555d55!important}
+body.light .property-enquiry-copy .eyebrow{color:#8b7048!important}
+body.light .property-contact-options,body.light .property-contact-options a{color:#174d40!important}
+body.light .property-enquiry-form input,body.light .property-enquiry-form textarea{background:#fff!important;color:#242820!important;border-color:#d7cfbd!important}
+body.light .property-enquiry-form input::placeholder,body.light .property-enquiry-form textarea::placeholder{color:#77796f!important;opacity:1}
+body.light .ds-footer{background:#f0eee8!important;color:#20251f!important;border-top-color:#d8d2c5!important}
+body.light .ds-footer-brand>p,body.light .ds-footer-contact .ds-office-address,body.light .ds-footer-credit,body.light .ds-footer-bottom{color:#62685f!important}
+body.light .ds-footer-contact a,body.light .ds-footer-credit a{color:#174d40!important}
+body.light .ds-footer-credit strong{color:#173f3a!important}
+body.light .ds-footer-brand .footer-brand img{content:url("assets/dream-space-logo.svg")!important}
+body:not(.light) .ds-footer-brand .footer-brand img{content:url("assets/dream-space-logo-beige.svg")!important}
+body.light .property-theme-toggle{color:#263b32;border-color:#c9c2b4}
+body.light .property-detail-share{background:#174d40!important;color:#fff!important;border-color:#174d40!important}
+@media(max-width:800px){
+ .property-theme-toggle{grid-column:2;grid-row:2;justify-self:start;padding:5px 8px}
+ .property-site-header{row-gap:8px}
+ .property-header-nav{grid-column:1;grid-row:2}
+ .property-header-contact{grid-column:3;grid-row:1}
+}
+@media(max-width:600px){
+ .property-site-header{grid-template-columns:1fr auto auto}
+ .property-header-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start}
+ .property-theme-toggle{grid-column:2;grid-row:1;justify-self:end}
+ .property-header-contact{grid-column:3;grid-row:1}
+ .property-whatsapp{padding:8px 9px;font-size:9px}
+}
+
+</style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><button type="button" class="property-theme-toggle" id="propertyThemeToggle" aria-label="Switch colour theme"><span id="propertyThemeIcon">☼</span><small id="propertyThemeLabel">LIGHT</small></button><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div><div class="ds-footer-credit"><p>Website designed &amp; developed by <strong>AKNOVA Digital</strong></p><a href="tel:+919374020304">+91 93740 20304</a></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script>
+<script>
+(()=>{const key="dream-space-home-theme",body=document.body,btn=document.getElementById("propertyThemeToggle"),icon=document.getElementById("propertyThemeIcon"),label=document.getElementById("propertyThemeLabel"),logo=document.querySelector(".ds-footer-brand .footer-brand img");let theme="dark";try{theme=localStorage.getItem(key)||"dark"}catch(e){}function apply(){const light=body.classList.contains("light");if(icon)icon.textContent=light?"☾":"☼";if(label)label.textContent=light?"DARK":"LIGHT";if(btn)btn.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");if(logo)logo.src=light?"assets/dream-space-logo.svg":"assets/dream-space-logo-beige.svg";}body.classList.toggle("light",theme==="light");apply();btn?.addEventListener("click",()=>{body.classList.toggle("light");const light=body.classList.contains("light");try{localStorage.setItem(key,light?"light":"dark")}catch(e){}apply()});})();
+</script></body></html>
