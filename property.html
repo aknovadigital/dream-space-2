@@ -176,6 +176,100 @@ body.light .property-detail-share{background:#174d40!important;color:#fff!import
  .property-whatsapp{padding:8px 9px;font-size:9px}
 }
 
+
+/* Premium property-detail redesign */
+.property-site-header{display:flex!important;justify-content:space-between!important;gap:clamp(12px,2.5vw,38px)!important;min-height:78px!important;padding:10px clamp(18px,5vw,76px)!important}
+.property-brand{flex:0 0 auto}
+.property-brand img{width:116px!important}
+.property-header-nav{flex:0 1 auto!important;margin-left:auto}
+.property-theme-toggle{flex:0 0 auto!important;min-width:100px;justify-content:center}
+.property-header-contact{flex:0 0 auto;margin-left:clamp(8px,2vw,26px)}
+.property-page{max-width:1500px!important;padding-top:clamp(38px,5vw,72px)!important;padding-bottom:90px!important}
+.property-intro{align-items:flex-end!important;gap:34px!important;margin-bottom:34px!important;padding-bottom:27px!important;border-bottom:1px solid #c3ad7b!important}
+.property-intro-copy{max-width:900px}
+.property-intro-copy .eyebrow{font-size:9px!important;letter-spacing:2.8px!important}
+.property-intro h1{font-size:clamp(38px,5vw,68px)!important;line-height:1.04!important;letter-spacing:-1.8px!important;color:#f1eee6!important}
+.property-intro-location{font-size:14px!important;letter-spacing:.3px}
+.property-intro-price{padding:16px 20px;background:linear-gradient(145deg,#202820,#171d17);border:1px solid #c2a56c;border-radius:3px;min-width:190px}
+.property-intro-price small{color:#d2c09b!important;font-size:9px!important;letter-spacing:2px!important}
+.property-intro-price strong{font-size:34px!important;color:#f1eee6!important}
+.property-intro-price .property-detail-share{width:100%;justify-content:center;margin-top:14px!important;background:#c5ae83!important;color:#17251e!important;border-color:#c5ae83!important;font-size:9px!important;letter-spacing:1.3px!important}
+.property-layout{grid-template-columns:minmax(0,1.45fr) minmax(340px,.8fr)!important;gap:clamp(24px,3.2vw,48px)!important}
+.property-gallery-main{height:min(58vw,690px)!important;min-height:440px!important;border-radius:3px!important;box-shadow:0 24px 65px #0005!important}
+.property-gallery-main img,.property-gallery-main video{cursor:zoom-in}
+.gallery-zoom-trigger{cursor:zoom-in}
+.property-gallery-thumbs{gap:10px!important;padding:15px 0 9px!important}
+.property-gallery-thumb{flex-basis:105px!important;width:105px!important;height:76px!important;border-radius:2px!important;opacity:.72;transition:opacity .2s,border-color .2s}
+.property-gallery-thumb.active,.property-gallery-thumb:hover{opacity:1;border-color:#c5ae83!important}
+.property-gallery-count{color:#c5ae83!important;font-size:10px!important;letter-spacing:1px!important}
+.property-info-panel{position:sticky;top:104px;background:linear-gradient(155deg,#fffefa,#f2eddf)!important;border:1px solid #c9b98f!important;border-top:4px solid #c5ae83!important;border-radius:3px!important;padding:clamp(24px,3vw,38px)!important;box-shadow:0 24px 60px #0002!important}
+.property-info-panel h2{font:500 25px var(--serif)!important;color:#173f3a!important;margin-bottom:22px!important}
+.property-info-panel h3{font:600 16px var(--sans)!important;letter-spacing:.2px!important;color:#173f3a!important}
+.property-specs{gap:11px!important}
+.property-spec{padding:15px!important;background:#f7f3e8!important;border-color:#e4dac3!important;border-radius:2px!important}
+.property-spec small{font-size:10px!important;letter-spacing:.3px}
+.property-spec strong{font-size:14px!important}
+.property-description{font-size:13px!important;line-height:2!important;color:#5c6259!important}
+.property-features{line-height:2!important;color:#5c6259!important}
+.property-divider{margin:26px 0!important;background:#dfd4bc!important}
+.property-enquiry-section{margin-top:72px!important;padding:clamp(28px,5vw,64px)!important;grid-template-columns:.75fr 1.25fr!important;gap:clamp(28px,5vw,70px)!important;background:linear-gradient(130deg,#f5f0e2,#e8dfc9)!important;border:1px solid #c7b88f!important;border-radius:3px!important;box-shadow:0 22px 55px #0002!important}
+.property-enquiry-copy .eyebrow{font-size:9px!important;letter-spacing:2.5px!important}
+.property-enquiry-copy h2{font:500 clamp(34px,4vw,52px)/1.1 var(--serif)!important;color:#173f3a!important}
+.property-enquiry-copy p{font-size:14px!important;line-height:1.9!important;color:#60665d!important}
+.property-contact-options a{font-size:11px!important;letter-spacing:.7px;text-transform:uppercase;text-decoration:none!important;border-bottom:1px solid #9a8356;padding-bottom:5px}
+.property-enquiry-form{gap:14px!important}
+.property-enquiry-form input,.property-enquiry-form textarea{min-height:50px!important;padding:15px 16px!important;background:#fffefa!important;border:1px solid #d8ceb7!important;border-radius:2px!important;color:#26342d!important;font:13px var(--sans)!important}
+.property-enquiry-form textarea{min-height:130px!important}
+.property-enquiry-form button{min-height:50px!important;min-width:210px!important;background:#174d40!important;color:#fff!important;border:1px solid #174d40!important;border-radius:2px!important;letter-spacing:1.2px!important;font-size:10px!important;text-transform:uppercase}
+.ds-footer{padding-top:55px!important;padding-bottom:28px!important}
+.property-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(7,10,8,.96);padding:50px 80px}
+.property-lightbox.open{display:flex}
+.lightbox-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.lightbox-stage img,.lightbox-stage video{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 15px 70px #0008}
+.lightbox-close,.lightbox-arrow{position:absolute;z-index:2;border:1px solid #e9dfc188;background:#141b16;color:#f1eee6;cursor:pointer;display:grid;place-items:center}
+.lightbox-close{right:26px;top:22px;width:48px;height:48px;border-radius:50%;font-size:30px}
+.lightbox-arrow{top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;font-size:30px}
+.lightbox-prev{left:22px}.lightbox-next{right:22px}
+.lightbox-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#e9dfc1;font-size:11px;letter-spacing:2px}
+body.lightbox-open{overflow:hidden}
+body.light .property-intro h1{color:#173f3a!important}
+body.light .property-intro-price{background:#fffefa;border-color:#b49a61}
+body.light .property-intro-price strong{color:#173f3a!important}
+body.light .property-intro-price .property-detail-share{background:#174d40!important;color:#fff!important;border-color:#174d40!important}
+body.light .property-gallery-count{color:#987e51!important}
+@media(max-width:900px){
+ .property-layout{grid-template-columns:1fr!important}
+ .property-info-panel{position:static}
+ .property-gallery-main{height:66vw!important;min-height:320px!important}
+ .property-enquiry-section{grid-template-columns:1fr!important}
+}
+@media(max-width:700px){
+ .property-site-header{display:flex!important;flex-wrap:wrap!important;gap:8px 12px!important;padding:10px 14px!important}
+ .property-brand img{width:94px!important}
+ .property-header-nav{order:3;flex:1 0 100%;border-top:1px solid #eee8da;padding-top:6px;gap:18px!important}
+ .property-header-nav .property-back{display:inline!important}
+ .property-header-nav .property-all{display:inline!important}
+ .property-theme-toggle{margin-left:auto;min-width:auto;padding:7px 9px!important}
+ .property-header-contact{margin-left:0}
+ .property-call{display:none!important}
+ .property-whatsapp{padding:9px 10px!important;font-size:9px!important}
+ .property-page{padding:28px 15px 56px!important}
+ .property-intro{flex-direction:column!important;align-items:stretch!important;gap:18px!important}
+ .property-intro h1{font-size:37px!important}
+ .property-intro-price{align-items:flex-start!important;min-width:0!important;width:100%;padding:14px 16px!important}
+ .property-intro-price .property-detail-share{width:auto!important;min-width:170px}
+ .property-gallery-main{height:72vw!important;min-height:250px!important}
+ .property-info-panel{padding:22px!important}
+ .property-enquiry-section{margin-top:42px!important;padding:22px 17px!important}
+ .property-enquiry-form{grid-template-columns:1fr!important}
+ .property-enquiry-form textarea,.property-enquiry-form .detail-message{grid-column:auto!important}
+ .property-enquiry-form button{width:100%!important}
+ .property-lightbox{padding:54px 12px 70px}
+ .lightbox-arrow{width:38px;height:38px;font-size:23px}
+ .lightbox-prev{left:8px}.lightbox-next{right:8px}
+ .lightbox-close{right:10px;top:10px;width:40px;height:40px}
+}
+
 </style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><button type="button" class="property-theme-toggle" id="propertyThemeToggle" aria-label="Switch colour theme"><span id="propertyThemeIcon">☼</span><small id="propertyThemeLabel">LIGHT</small></button><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div><div class="ds-footer-credit"><p>Website designed &amp; developed by <strong>AKNOVA Digital</strong></p><a href="tel:+919374020304">+91 93740 20304</a></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script>
 <script>
 (()=>{const key="dream-space-home-theme",body=document.body,btn=document.getElementById("propertyThemeToggle"),icon=document.getElementById("propertyThemeIcon"),label=document.getElementById("propertyThemeLabel"),logo=document.querySelector(".ds-footer-brand .footer-brand img");let theme="dark";try{theme=localStorage.getItem(key)||"dark"}catch(e){}function apply(){const light=body.classList.contains("light");if(icon)icon.textContent=light?"☾":"☼";if(label)label.textContent=light?"DARK":"LIGHT";if(btn)btn.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");if(logo)logo.src=light?"assets/dream-space-logo.svg":"assets/dream-space-logo-beige.svg";}body.classList.toggle("light",theme==="light");apply();btn?.addEventListener("click",()=>{body.classList.toggle("light");const light=body.classList.contains("light");try{localStorage.setItem(key,light?"light":"dark")}catch(e){}apply()});})();
