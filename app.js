@@ -1,6 +1,20 @@
 (() => {
- const cfg=window.DS_CONFIG||{},client=window.supabase&&cfg.supabaseUrl&&cfg.supabaseAnonKey?window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey):null,$=s=>document.querySelector(s);let requestedLoginRole=null;
+ const cfg=window.DS_CONFIG||{},client=window.supabase&&cfg.supabaseUrl&&cfg.supabaseAnonKey?window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storage:window.localStorage,storageKey:"dream-space-auth"}}):null,$=s=>document.querySelector(s);let requestedLoginRole=null;
  const propertyGrid=$("#propertyGrid");
+ const adminHomeLink=$("#adminHomeLink"),accountLoginButton=$("#accountLoginOpen");
+ async function syncHomepageAdmin(){
+  if(!client||!adminHomeLink||!accountLoginButton)return;
+  const {data:{session}}=await client.auth.getSession();
+  if(!session){adminHomeLink.hidden=true;accountLoginButton.hidden=false;return}
+  const {data:profile,error}=await client.from("ds_v2_profiles").select("full_name,role,active").eq("id",session.user.id).maybeSingle();
+  const isAdmin=!error&&profile?.active&&["super_admin","team_member"].includes(profile.role);
+  adminHomeLink.textContent=isAdmin?(profile.full_name||session.user.email||"Admin"):"";
+  adminHomeLink.hidden=!isAdmin;
+  accountLoginButton.hidden=isAdmin;
+ }
+ syncHomepageAdmin();
+ client?.auth.onAuthStateChange((_event)=>{setTimeout(syncHomepageAdmin,0)});
+ 
  const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const money=(v,c="INR")=>v?new Intl.NumberFormat("en-IN",{style:"currency",currency:c,maximumFractionDigits:0}).format(v):"Price on request";
  const say=(id,t)=>{const el=$(id);if(el)el.textContent=t};
