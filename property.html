@@ -352,6 +352,80 @@ body.light .property-divider{background:#d8ccb3!important}
  .property-enquiry-copy h2{font-size:43px!important}
 }
 
+
+/* Final property-page composition: gallery first, then compact price, overview, enquiry, footer */
+.property-site-header{position:absolute!important;top:0;left:0;right:0;width:100%;background:transparent!important;border:0!important;box-shadow:none!important;min-height:82px!important;padding:14px clamp(18px,5vw,76px)!important;display:flex!important;justify-content:space-between!important;gap:22px!important}
+.property-brand img{width:118px!important;filter:brightness(0) invert(1)!important}
+.property-header-nav,.property-header-nav a,.property-site-header .property-back,.property-site-header .property-all{color:#fff!important;text-shadow:0 1px 8px #0008}
+.property-header-contact{margin-left:auto}
+.property-call,.property-call b{color:#fff!important}
+.property-theme-toggle{border-color:#ffffff70!important;color:#fff!important;background:#10161040!important;backdrop-filter:blur(8px)}
+.property-whatsapp{background:#176b4a!important}
+.property-page{max-width:none!important;padding:0!important}
+#propertyDetail .property-hero-gallery{width:100%;margin:0;padding:0;background:#111711}
+#propertyDetail .property-hero-gallery .property-gallery{width:100%;margin:0}
+#propertyDetail .property-hero-gallery .property-gallery-main{height:min(92vh,980px)!important;min-height:580px!important;max-height:none!important;border-radius:0!important;box-shadow:none!important}
+#propertyDetail .property-hero-gallery .property-gallery-main img,
+#propertyDetail .property-hero-gallery .property-gallery-main video{object-fit:cover!important}
+#propertyDetail .property-hero-gallery .property-gallery-main:before{display:none!important}
+#propertyDetail .property-hero-gallery .property-gallery-thumbs{display:none!important}
+#propertyDetail .property-hero-gallery .property-gallery-count{display:none!important}
+.gallery-all-photos{position:absolute;z-index:5;right:clamp(18px,5vw,72px);bottom:26px;display:inline-flex;align-items:center;gap:12px;padding:12px 17px;background:#101710b8;border:1px solid #f1ead4b5;color:#fff;font:600 9px var(--sans);letter-spacing:1.6px;backdrop-filter:blur(10px);cursor:pointer}
+.gallery-all-photos span{font-size:16px;color:#d4bd8b}
+#propertyDetail .property-intro{max-width:1320px;margin:0 auto!important;padding:34px clamp(20px,5vw,70px) 32px!important;display:flex!important;align-items:center!important;gap:24px!important;border-bottom:1px solid #b9a77f!important}
+#propertyDetail .property-intro h1{font-size:clamp(30px,4vw,52px)!important;line-height:1.06!important}
+#propertyDetail .property-intro-price{display:flex!important;flex-direction:row!important;align-items:center!important;gap:13px!important;flex-wrap:wrap!important}
+#propertyDetail .property-intro-price small{width:100%;margin:0!important}
+#propertyDetail .property-intro-price strong{font-size:clamp(25px,3vw,36px)!important}
+#propertyDetail .property-intro-price .property-detail-share{width:auto!important;margin:0!important;padding:10px 14px!important;font-size:9px!important}
+#propertyDetail .property-overview-section{max-width:1320px;margin:0 auto;padding:68px clamp(20px,5vw,70px) 28px}
+#propertyDetail .property-overview-section .property-info-panel{width:100%!important;max-width:none!important;margin:0!important;position:static!important;transform:none!important;padding:clamp(28px,4vw,54px)!important;background:linear-gradient(135deg,#202820,#151b15)!important;border:1px solid #8f7b55!important;border-top:3px solid #c5ae83!important;box-shadow:0 25px 70px #0003!important;color:#eeeae1!important}
+#propertyDetail .property-overview-section .property-info-panel h2{font:400 clamp(30px,4vw,44px)/1.1 var(--serif)!important;color:#f1eee6!important;margin-bottom:25px!important}
+#propertyDetail .property-overview-section .property-info-panel h3{font:500 22px var(--serif)!important;color:#e5d6b5!important}
+#propertyDetail .property-overview-section .property-spec{background:#ffffff0a!important;border-color:#ffffff28!important;padding:18px!important}
+#propertyDetail .property-overview-section .property-spec small{color:#c5c1b3!important}
+#propertyDetail .property-overview-section .property-spec strong{color:#f1eee6!important}
+#propertyDetail .property-overview-section .property-description,
+#propertyDetail .property-overview-section .property-features{color:#d0cfc4!important;line-height:2!important}
+#propertyDetail .property-overview-section .property-divider{background:#c5ae8355!important}
+#propertyDetail .property-enquiry-section{max-width:1180px;margin:40px auto 80px!important;padding:clamp(28px,5vw,64px)!important}
+#propertyDetail .property-enquiry-section:before{content:none!important}
+.ds-footer{margin-top:0!important}
+body.light .property-site-header{background:transparent!important}
+body.light .property-brand img{filter:brightness(0) invert(1)!important}
+body.light .property-header-nav,body.light .property-header-nav a,body.light .property-call,body.light .property-call b{color:#fff!important}
+body.light .property-theme-toggle{color:#fff!important;border-color:#ffffff70!important}
+body.light #propertyDetail .property-overview-section .property-info-panel{background:linear-gradient(135deg,#fffefa,#eee8d8)!important;color:#20251f!important}
+body.light #propertyDetail .property-overview-section .property-info-panel h2{color:#173f3a!important}
+body.light #propertyDetail .property-overview-section .property-info-panel h3{color:#8c7044!important}
+body.light #propertyDetail .property-overview-section .property-spec{background:#f7f3e8!important;border-color:#ded4bf!important}
+body.light #propertyDetail .property-overview-section .property-spec small{color:#73746b!important}
+body.light #propertyDetail .property-overview-section .property-spec strong{color:#173f3a!important}
+body.light #propertyDetail .property-overview-section .property-description,body.light #propertyDetail .property-overview-section .property-features{color:#5c6259!important}
+@media(max-width:800px){
+ .property-site-header{min-height:70px!important;padding:10px 14px!important;gap:10px!important;flex-wrap:wrap!important}
+ .property-brand img{width:88px!important}
+ .property-header-nav{display:flex!important;order:2;flex:1 0 100%;justify-content:flex-start!important;gap:18px!important;padding-top:5px!important;border:0!important}
+ .property-header-nav a{font-size:10px!important}
+ .property-header-contact{margin-left:auto!important}
+ .property-call{display:none!important}
+ .property-theme-toggle{padding:7px 9px!important}
+ #propertyDetail .property-hero-gallery .property-gallery-main{height:78vh!important;min-height:480px!important}
+ #propertyDetail .property-intro{align-items:flex-start!important;flex-direction:column!important;padding:25px 20px!important}
+ #propertyDetail .property-intro-price{align-items:center!important}
+ #propertyDetail .property-overview-section{padding:36px 16px 10px}
+ #propertyDetail .property-overview-section .property-info-panel{padding:25px 20px!important}
+ #propertyDetail .property-enquiry-section{margin:30px 16px 48px!important}
+}
+@media(max-width:520px){
+ .property-header-nav{gap:14px!important}
+ .property-header-nav .property-all{display:inline!important}
+ .property-whatsapp{padding:8px 9px!important;font-size:9px!important}
+ .property-theme-toggle small{font-size:8px!important}
+ #propertyDetail .property-hero-gallery .property-gallery-main{height:70vh!important;min-height:420px!important}
+ .gallery-all-photos{right:14px;bottom:14px;padding:10px 12px;font-size:8px}
+}
+
 </style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><button type="button" class="property-theme-toggle" id="propertyThemeToggle" aria-label="Switch colour theme"><span id="propertyThemeIcon">☼</span><small id="propertyThemeLabel">LIGHT</small></button><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script>
 <script>
 (()=>{const key="dream-space-home-theme",body=document.body,btn=document.getElementById("propertyThemeToggle"),icon=document.getElementById("propertyThemeIcon"),label=document.getElementById("propertyThemeLabel"),logo=document.querySelector(".ds-footer-brand .footer-brand img");let theme="dark";try{theme=localStorage.getItem(key)||"dark"}catch(e){}function apply(){const light=body.classList.contains("light");if(icon)icon.textContent=light?"☾":"☼";if(label)label.textContent=light?"DARK":"LIGHT";if(btn)btn.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");if(logo)logo.src=light?"assets/dream-space-logo.svg":"assets/dream-space-logo-beige.svg";}body.classList.toggle("light",theme==="light");apply();btn?.addEventListener("click",()=>{body.classList.toggle("light");const light=body.classList.contains("light");try{localStorage.setItem(key,light?"light":"dark")}catch(e){}apply()});})();
