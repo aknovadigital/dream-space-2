@@ -479,6 +479,35 @@ body.light .property-header-nav a,body.light .property-call,body.light .property
  #propertyDetail .property-hero-gallery .property-gallery-main{height:100svh!important;min-height:520px!important}
 }
 
+
+/* Transparent editorial controls over the retained dark hero gradient */
+.property-site-header{background:linear-gradient(180deg,rgba(7,11,8,.88) 0%,rgba(7,11,8,.55) 58%,rgba(7,11,8,0) 100%)!important;backdrop-filter:none!important}
+.property-brand{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+.property-brand img{background:transparent!important;filter:brightness(0) invert(1)!important}
+.property-header-nav a,.property-theme-toggle,.property-call,.property-whatsapp,.gallery-all-photos{
+ background:transparent!important;
+ border:0!important;
+ border-radius:0!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+ color:#fff!important;
+ text-shadow:0 1px 5px rgba(0,0,0,.6)!important;
+}
+.property-header-nav a{padding:8px 12px!important;font-size:13px!important;font-weight:600!important}
+.property-header-nav a:hover,.property-theme-toggle:hover,.property-call:hover,.property-whatsapp:hover,.gallery-all-photos:hover{background:transparent!important;color:#e4c995!important}
+.property-theme-toggle{padding:8px 12px!important}
+.property-theme-toggle small{color:#fff!important}
+.property-call{padding:7px 10px!important}
+.property-call span,.property-call b{color:#fff!important}
+.property-whatsapp{padding:8px 12px!important;font-weight:600!important}
+.gallery-all-photos{padding:14px 18px!important;font-size:11px!important;font-weight:700!important;border:0!important}
+.gallery-all-photos span{color:#e4c995!important}
+body.light .property-header-nav a,body.light .property-theme-toggle,body.light .property-theme-toggle small,body.light .property-call,body.light .property-call b,body.light .property-whatsapp,body.light .gallery-all-photos{color:#fff!important}
+@media(max-width:800px){
+ .property-brand{background:transparent!important;border:0!important;padding:0!important}
+ .property-header-nav a,.property-theme-toggle,.property-whatsapp{background:transparent!important;border:0!important}
+}
+
 </style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><button type="button" class="property-theme-toggle" id="propertyThemeToggle" aria-label="Switch colour theme"><span id="propertyThemeIcon">☼</span><small id="propertyThemeLabel">LIGHT</small></button><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo-beige.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script>
 <script>
 (()=>{const key="dream-space-home-theme",body=document.body,btn=document.getElementById("propertyThemeToggle"),icon=document.getElementById("propertyThemeIcon"),label=document.getElementById("propertyThemeLabel"),logo=document.querySelector(".ds-footer-brand .footer-brand img");let theme="dark";try{theme=localStorage.getItem(key)||"dark"}catch(e){}function apply(){const light=body.classList.contains("light");if(icon)icon.textContent=light?"☾":"☼";if(label)label.textContent=light?"DARK":"LIGHT";if(btn)btn.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");if(logo)logo.src=light?"assets/dream-space-logo.svg":"assets/dream-space-logo-beige.svg";}body.classList.toggle("light",theme==="light");apply();btn?.addEventListener("click",()=>{body.classList.toggle("light");const light=body.classList.contains("light");try{localStorage.setItem(key,light?"light":"dark")}catch(e){}apply()});})();
