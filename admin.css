@@ -96,3 +96,10 @@ body[data-theme="dark"] .profile-form input[readonly]{background:#252b23;color:#
 .cover-tag{display:inline-block;background:#b69a62;color:#171810;padding:3px 6px;border-radius:3px;font-size:9px;letter-spacing:.08em}
 .cover-selected{font-size:11px;color:#26734e;font-weight:700}
 @media(max-width:600px){#mediaList{grid-template-columns:repeat(2,minmax(0,1fr));max-height:360px}.media-preview{height:112px}}
+
+/* Modal controls: keep close and cancel clearly visible on the light editor surface */
+#editor .modal-head .quiet{color:var(--teal)!important;background:#f2eee4!important;border:1px solid var(--line)!important;width:36px;height:36px;padding:0!important;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:18px;font-weight:600;}
+#editor .modal-head .quiet:hover{background:var(--teal)!important;color:#fff!important;}
+#editor .modal-actions #cancelEditor{color:var(--teal)!important;background:#f2eee4!important;border:1px solid var(--line)!important;padding:11px 18px!important;border-radius:3px;font-weight:600;}
+#editor .modal-actions #cancelEditor:hover{background:#e7dfcf!important;color:#102f2c!important;}
+#editor .modal-actions .primary{min-width:116px;}
