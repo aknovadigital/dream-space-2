@@ -81,3 +81,4 @@ body[data-theme="dark"] .profile-form input[readonly]{background:#252b23;color:#
  .portal-theme-toggle{position:absolute;top:12px;right:12px}
  .topbar-actions button{min-height:38px}
 }
+.cover-tag{display:inline-block;background:#c5ae83;color:#18231c;padding:3px 6px;font-size:9px;letter-spacing:1px;font-weight:700}.media-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.media-actions button{border:1px solid var(--line);background:#fff;color:var(--teal);padding:6px 9px;font-size:10px;cursor:pointer}.cover-selected{font-size:10px;color:#176b4a;font-weight:700}
