@@ -147,6 +147,25 @@ body{margin:0!important;background:var(--paper)!important;background-image:none!
  #closeBrokerProperty{width:36px;height:36px}
 }
 
+
+/* Property detail typography and alignment refinement */
+.broker-detail-section{margin-top:30px}
+.broker-detail-section h3{margin:0 0 15px;font-size:clamp(20px,2vw,25px);line-height:1.2}
+.broker-detail-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.broker-detail-specs>.broker-spec-item{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;min-width:0;min-height:88px;padding:15px 17px;background:var(--surface2);border:1px solid var(--line);box-sizing:border-box}
+.broker-spec-item small{display:block;margin:0;color:var(--muted);font-size:12px;line-height:1.35;font-weight:500;letter-spacing:.035em}
+.broker-spec-item b{display:block;max-width:100%;margin:0;color:var(--teal);font-size:clamp(15px,1.5vw,18px);line-height:1.35;font-weight:650;overflow-wrap:anywhere}
+.broker-detail-description{margin:0;color:var(--ink);font-size:15px;line-height:1.85;white-space:pre-line;overflow-wrap:anywhere;max-width:78ch}
+@media(max-width:700px){
+ .broker-detail-section{margin-top:25px}
+ .broker-detail-section h3{font-size:21px;margin-bottom:12px}
+ .broker-detail-specs{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .broker-detail-specs>.broker-spec-item{min-height:76px;padding:12px}
+ .broker-spec-item small{font-size:11px}
+ .broker-spec-item b{font-size:15px}
+ .broker-detail-description{font-size:14px;line-height:1.7}
+}
+
 </style><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20261128"><link rel="apple-touch-icon" href="/assets/favicon.svg"></head><body><header class="header"><a class="brand" href="index.html"><img src="assets/dream-space-logo.svg" alt="Dream Space" style="width:125px;height:auto"></a><button type="button" class="portal-theme-toggle" id="portalThemeToggle" aria-label="Switch theme">☼ <span>LIGHT</span></button><button class="outline" id="logout">Sign out</button></header><main class="broker-main"><div class="broker-head"><div><h1>Broker workspace</h1><p id="brokerName" class="muted">Loading your account…</p></div></div><div class="broker-summary"><div><small>Properties you can view</small><strong id="inventoryCount">—</strong></div><div><small>Available</small><strong id="inventoryAvailable">—</strong></div><div><small>Under offer</small><strong id="inventoryOffer">—</strong></div></div><div class="broker-tabs"><button class="active" data-tab="inventory">Property inventory</button><button data-tab="submissions">My submissions</button><button data-tab="submit">Submit a property</button><button data-tab="profile">My profile</button></div>
 <section id="inventoryTab"><div class="broker-tools"><input id="search" placeholder="Search property or location"><select id="category"><option value="">All accessible inventory</option></select></div><div id="inventory" class="broker-grid"><p class="broker-empty">Loading your inventory…</p></div></section>
 <section id="submissionsTab" class="hidden"><div id="mySubmissions"></div></section>
