@@ -484,3 +484,16 @@ body.light .map-location-card{box-shadow:0 8px 30px rgba(0,0,0,.14)}
   .topbar .header-action-icon{width:32px;height:32px;min-width:32px;display:grid;place-items:center}
   .topbar .header-action-icon svg{width:15px;height:15px}
 }
+
+
+/* Property card share action */
+#propertyGrid .property-card{position:relative;overflow:hidden}
+#propertyGrid .property-card-link{display:flex;flex-direction:column;flex:1;color:#292a23;min-width:0}
+#propertyGrid .property-card-link img{width:100%;height:260px;object-fit:cover;display:block}
+#propertyGrid .property-share-button{
+  align-self:flex-start;margin:0 22px 20px;padding:9px 13px;
+  border:1px solid #b49a61;border-radius:3px;background:transparent;
+  color:#174d40;font:600 10px var(--sans);letter-spacing:.7px;cursor:pointer;
+}
+#propertyGrid .property-share-button:hover{background:#174d40;color:#fff}
+@media(max-width:600px){#propertyGrid .property-share-button{margin:0 21px 18px}}
