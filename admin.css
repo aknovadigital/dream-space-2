@@ -103,3 +103,29 @@ body[data-theme="dark"] .profile-form input[readonly]{background:#252b23;color:#
 #editor .modal-actions #cancelEditor{color:var(--teal)!important;background:#f2eee4!important;border:1px solid var(--line)!important;padding:11px 18px!important;border-radius:3px;font-weight:600;}
 #editor .modal-actions #cancelEditor:hover{background:#e7dfcf!important;color:#102f2c!important;}
 #editor .modal-actions .primary{min-width:116px;}
+
+
+/* Admin CRM mobile usability refinements */
+@media(max-width:700px){
+ .topbar{align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+ .topbar>div:first-child{min-width:0;flex:1 1 100%}
+ .topbar-actions{width:100%;display:flex;flex-wrap:wrap;gap:8px}
+ .topbar-actions>*{min-height:40px}
+ .topbar-actions .portal-theme-toggle{position:static;margin:0}
+ .table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ table{min-width:650px}
+ .panel{min-width:0;max-width:100%;overflow:hidden}
+ dialog{width:calc(100vw - 16px);max-width:none;max-height:94dvh;margin:auto;border-radius:6px}
+ #editorForm{padding:15px}
+ .modal-head{position:sticky;top:0;z-index:3;background:var(--surface);padding:4px 0 12px}
+ .modal-head h2{font-size:23px}
+ .fields{grid-template-columns:minmax(0,1fr);gap:0}
+ .fields label,.fields label.full{grid-column:1;min-width:0}
+ .fields input,.fields select,.fields textarea{width:100%;min-width:0;box-sizing:border-box;min-height:44px;font-size:16px}
+ .modal-actions{position:sticky;bottom:0;background:var(--surface);padding:12px 0 2px;z-index:3;flex-wrap:wrap}
+ .modal-actions button{min-height:44px}
+ .media-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .filters input,.filters select,.toolbar input,.toolbar select{width:100%;min-width:0;min-height:44px;font-size:16px}
+ .sidebar{padding-bottom:env(safe-area-inset-bottom)}
+ .nav{font-size:8px;line-height:1.15}
+}
