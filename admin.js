@@ -1,5 +1,5 @@
 (() => {
- const cfg=window.DS_CONFIG||{}, sb=window.supabase&&cfg.supabaseUrl&&!cfg.supabaseUrl.includes("YOUR-PROJECT")?window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey):null; window.DS_SB=sb;
+ const cfg=window.DS_CONFIG||{}, sb=window.supabase&&cfg.supabaseUrl&&!cfg.supabaseUrl.includes("YOUR-PROJECT")?window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storage:window.localStorage,storageKey:"dream-space-auth"}}):null; window.DS_SB=sb;
  const $=s=>document.querySelector(s), today=new Date().toISOString().slice(0,10);
  let currentUser=null,currentProfile=null, rows={properties:[],leads:[],followups:[],deals:[],brokers:[]}, editing=null, pendingMediaFiles=[],pendingCoverIndex=0,leadStatusFilter="",followupFilter="";
  const allowedMediaTypes=new Set(["image/jpeg","image/png","image/webp","image/avif","image/heic","image/heif","video/mp4","video/webm","video/quicktime"]),maxMediaBytes=50*1024*1024;
