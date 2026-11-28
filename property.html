@@ -66,4 +66,60 @@
 @media(max-width:600px){.property-site-header{grid-template-columns:1fr auto}.property-header-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;border-top:1px solid #eee8da;padding-top:6px}.property-header-nav .property-back{display:inline}.property-header-nav .property-all{display:none}.property-header-contact{grid-column:2;grid-row:1}.property-brand{grid-column:1;grid-row:1}.property-intro{align-items:flex-start;flex-direction:column;gap:12px;padding-bottom:16px;margin-bottom:18px}.property-intro-price{text-align:left}.property-intro h1{font-size:35px}.property-info-panel{border-top-width:3px}}
 
 .property-gallery-main{position:relative}.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border:1px solid #fff9;border-radius:50%;background:#092e3bb8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:25px;line-height:1;cursor:pointer;box-shadow:0 3px 14px #0003;transition:background .2s,transform .2s}.gallery-arrow:hover{background:#073e52;transform:translateY(-50%) scale(1.06)}.gallery-arrow:disabled{opacity:.35;cursor:default}.gallery-arrow.prev{left:16px}.gallery-arrow.next{right:16px}.gallery-arrow:focus-visible{outline:3px solid #e9d8a9;outline-offset:3px}@media(max-width:600px){.gallery-arrow{width:36px;height:36px;font-size:21px}.gallery-arrow.prev{left:9px}.gallery-arrow.next{right:9px}}
-</style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, Mapusa, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div><div class="ds-footer-credit"><p>Website designed &amp; developed by <strong>AKNOVA Digital</strong></p><a href="tel:+919374020304">+91 93740 20304</a></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script></body></html>
+
+/* Property detail page contrast and footer refinements */
+#propertyDetail .property-info-panel{
+  background:#fffefa!important;color:#20251f!important;border:1px solid #e4ddcd!important;
+}
+#propertyDetail .property-info-panel h2,
+#propertyDetail .property-info-panel h3{color:#173f3a!important}
+#propertyDetail .property-info-panel .property-description,
+#propertyDetail .property-info-panel .property-features{color:#555d55!important}
+#propertyDetail .property-spec{background:#f7f4eb!important;border-color:#e5dece!important}
+#propertyDetail .property-spec small{color:#686c62!important}
+#propertyDetail .property-spec strong{color:#173f3a!important}
+#propertyDetail .property-divider{background:#e5dece!important}
+#propertyDetail .property-enquiry-section{
+  background:#f2eddc!important;color:#20251f!important;border-color:#ddd2b8!important;
+}
+#propertyDetail .property-enquiry-copy .eyebrow{color:#8b7048!important}
+#propertyDetail .property-enquiry-copy h2{color:#173f3a!important}
+#propertyDetail .property-enquiry-copy p{color:#555d55!important}
+#propertyDetail .property-contact-options,
+#propertyDetail .property-contact-options a{color:#174d40!important}
+#propertyDetail .property-enquiry-form input,
+#propertyDetail .property-enquiry-form textarea{
+  background:#fff!important;color:#242820!important;border:1px solid #d7cfbd!important;
+}
+#propertyDetail .property-enquiry-form input::placeholder,
+#propertyDetail .property-enquiry-form textarea::placeholder{color:#77796f!important;opacity:1}
+#propertyDetail .property-enquiry-form button{
+  background:#174d40!important;color:#fff!important;border:1px solid #174d40!important;
+  font-size:11px!important;letter-spacing:1px!important;text-transform:uppercase;
+}
+#propertyDetail .property-enquiry-form .detail-message{color:#174d40!important}
+.ds-footer{
+  background:#171d17!important;color:#eeeae1!important;padding:44px clamp(20px,6vw,84px) 22px!important;
+  border-top:1px solid #ffffff20!important;
+}
+.ds-footer-main{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:48px;align-items:start}
+.ds-footer-brand .footer-brand{display:inline-flex;max-width:150px;align-items:center}
+.ds-footer-brand .footer-brand img{display:block;width:132px!important;max-width:100%;height:auto!important;max-height:76px!important;object-fit:contain}
+.ds-footer-brand>p{color:#c2c0b4!important;font-size:13px!important;margin:16px 0}
+.ds-footer-contact{display:flex;flex-wrap:wrap;gap:12px 22px;max-width:760px}
+.ds-footer-contact a,.ds-footer-credit a{font-size:12px!important;line-height:1.7;color:#d9c9a8!important}
+.ds-footer-contact .ds-office-address{display:block;flex-basis:100%;max-width:580px;color:#c2c0b4!important}
+.ds-footer-contact .ds-email{color:#d9c9a8!important}
+.ds-footer-credit{border-top:1px solid #ffffff20;margin-top:30px;padding-top:18px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;color:#c2c0b4!important;font-size:12px}
+.ds-footer-credit p{margin:0}
+.ds-footer-credit strong{color:#fff!important}
+.ds-footer-bottom{max-width:1280px;margin:18px auto 0;padding-top:15px;border-top:1px solid #ffffff20;color:#aaa99e!important;font-size:11px}
+@media(max-width:700px){
+ .ds-footer{padding:32px 20px 18px!important}
+ .ds-footer-main{grid-template-columns:1fr;gap:22px}
+ .ds-footer-brand .footer-brand img{width:116px!important;max-height:66px!important}
+ .ds-footer-contact{flex-direction:column;gap:8px}
+ .ds-footer-contact .ds-office-address{max-width:100%}
+ .ds-footer-credit{flex-direction:column;align-items:flex-start;gap:7px}
+}
+</style></head><body><header class="property-site-header"><a class="property-brand" href="index.html" aria-label="Dream Space home"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><nav class="property-header-nav" aria-label="Property navigation"><a class="property-back" href="index.html#homes">← Back</a><a class="property-all" href="index.html#homes">View all properties</a></nav><div class="property-header-contact"><a class="property-call" href="tel:+919175065537"><span>Call</span><b>+91 91750 65537</b></a><a class="property-whatsapp" href="https://wa.me/919175065537" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> WhatsApp</a></div></header><main id="propertyDetail" class="property-page"><p class="empty">Loading property…</p></main><footer class="ds-footer"><div class="ds-footer-main"><div class="ds-footer-brand"><a class="footer-brand" href="index.html"><img src="assets/dream-space-logo.svg" alt="Dream Space"></a><p>Property, thoughtfully found.</p><div class="ds-footer-contact"><a href="tel:+919175065537">+91 91750 65537</a><a href="https://wa.me/919175065537" target="_blank" rel="noopener">WhatsApp Dream Space</a><a href="https://www.instagram.com/dream.space.goa/" target="_blank" rel="noopener">@dream.space.goa</a><a class="ds-office-address" href="https://www.google.com/maps/search/?api=1&query=Shop%20No.%202%2C%20Opposite%20Saldhana%20Bougain%20Villa%2C%20Badem%2C%20Assagao%2C%20Mapusa%2C%20North%20Goa%2C%20Goa%20%E2%80%93%20403507" target="_blank" rel="noopener">Shop No. 2, Opposite Saldhana Bougain Villa, Badem, Assagao, North Goa, Goa – 403507 <span aria-hidden="true">↗</span></a><a class="ds-email" href="mailto:dreamspacegoa51@gmail.com">dreamspacegoa51@gmail.com</a></div></div><div class="ds-footer-credit"><p>Website designed &amp; developed by <strong>AKNOVA Digital</strong></p><a href="tel:+919374020304">+91 93740 20304</a></div></div><div class="ds-footer-bottom"><span>© <span id="year"></span> Dream Space. All rights reserved.</span></div></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="property.js?v=20261126-office-address-enquiry-fix"></script></body></html>
