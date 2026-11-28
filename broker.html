@@ -166,6 +166,33 @@ body{margin:0!important;background:var(--paper)!important;background-image:none!
  .broker-detail-description{font-size:14px;line-height:1.7}
 }
 
+
+/* Swipeable gallery and enlarged-photo viewer */
+.broker-detail-main{position:relative;background:var(--surface2)!important;touch-action:pan-y;overflow:hidden}
+.broker-detail-main .broker-main-photo{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;background:var(--surface2);cursor:zoom-in}
+.broker-detail-main video{background:var(--surface2)}
+.broker-gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(25,30,24,.76);color:#fff;font-size:29px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.broker-gallery-arrow.prev{left:12px}.broker-gallery-arrow.next{right:12px}
+.broker-detail-gallery-count{text-align:right;color:var(--muted);font-size:11px;letter-spacing:.08em;margin-top:7px}
+.broker-detail-thumbs button{cursor:pointer}
+.broker-photo-lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(10,13,10,.96);align-items:center;justify-content:center;padding:58px 56px 48px;box-sizing:border-box}
+.broker-photo-lightbox.open{display:flex}
+.broker-photo-lightbox>img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.broker-lightbox-close,.broker-lightbox-arrow{position:absolute;border:1px solid rgba(255,255,255,.45);background:rgba(20,25,20,.72);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.broker-lightbox-close{top:14px;right:16px;width:44px;height:44px;font-size:30px}
+.broker-lightbox-arrow{top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:34px}
+.broker-lightbox-arrow.prev{left:14px}.broker-lightbox-arrow.next{right:14px}
+.broker-lightbox-count{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#fff;font-size:12px;letter-spacing:.1em}
+@media(max-width:700px){
+ .broker-detail-main{height:48vh;min-height:240px;max-height:52vh}
+ .broker-gallery-arrow{width:38px;height:38px;font-size:26px}
+ .broker-gallery-arrow.prev{left:8px}.broker-gallery-arrow.next{right:8px}
+ .broker-photo-lightbox{padding:60px 10px 48px}
+ .broker-lightbox-arrow{width:42px;height:42px}
+ .broker-lightbox-arrow.prev{left:8px}.broker-lightbox-arrow.next{right:8px}
+ .broker-photo-lightbox>img{max-width:100%;max-height:100%}
+}
+
 </style><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20261128"><link rel="apple-touch-icon" href="/assets/favicon.svg"></head><body><header class="header"><a class="brand" href="index.html"><img src="assets/dream-space-logo.svg" alt="Dream Space" style="width:125px;height:auto"></a><button type="button" class="portal-theme-toggle" id="portalThemeToggle" aria-label="Switch theme">☼ <span>LIGHT</span></button><button class="outline" id="logout">Sign out</button></header><main class="broker-main"><div class="broker-head"><div><h1>Broker workspace</h1><p id="brokerName" class="muted">Loading your account…</p></div></div><div class="broker-summary"><div><small>Properties you can view</small><strong id="inventoryCount">—</strong></div><div><small>Available</small><strong id="inventoryAvailable">—</strong></div><div><small>Under offer</small><strong id="inventoryOffer">—</strong></div></div><div class="broker-tabs"><button class="active" data-tab="inventory">Property inventory</button><button data-tab="submissions">My submissions</button><button data-tab="submit">Submit a property</button><button data-tab="profile">My profile</button></div>
 <section id="inventoryTab"><div class="broker-tools"><input id="search" placeholder="Search property or location"><select id="category"><option value="">All accessible inventory</option></select></div><div id="inventory" class="broker-grid"><p class="broker-empty">Loading your inventory…</p></div></section>
 <section id="submissionsTab" class="hidden"><div id="mySubmissions"></div></section>
